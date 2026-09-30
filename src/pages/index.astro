@@ -1,6 +1,7 @@
 ---
 import PortfolioLayout from '../layouts/PortfolioLayout.astro';
 import WorkCard from '../components/WorkCard.astro';
+import marginCover from '../assets/margin/cover.png';
 ---
 <PortfolioLayout home>
 <main id="top">
@@ -123,7 +124,7 @@ import WorkCard from '../components/WorkCard.astro';
         <p>Three perspectives on learning: experience design, program design, and learning architecture.</p>
       </div>
       <div class="port-grid">
-        <WorkCard title="The Margin" category="Learning Experience Design" href="/work/the-margin" summary="An interactive field journal for practicing judgment under changing conditions. Explore the design, then take the trail as Eli Torres." />
+        <WorkCard title="The Margin" category="Learning Experience Design" href="/work/the-margin" image={marginCover} imageAlt="The Margin field-journal cover with pressed blue flowers" summary="An interactive field journal for practicing judgment under changing conditions. Explore the design, then take the trail as Eli Torres." />
         <WorkCard title="Delivery Lead Bootcamp" category="Leadership Development" href="/work/delivery-lead-bootcamp" summary="A pilot leadership bootcamp designed to surface questions about the operating model, technology, and delivery assumptions before full development. Case study coming soon." />
         <WorkCard title="CT&I Learning Architecture & Strategy" category="Learning Strategy" href="/work/cti-learning-architecture" summary="A look at learning architecture and strategy. The project context, design approach, and supporting artifacts will be added in the full case study." />
       </div>

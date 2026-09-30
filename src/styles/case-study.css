@@ -14,3 +14,6 @@
 .visual-placeholder figcaption { margin-top: 10px; color: var(--ink-soft); font-size: .9rem; }
 .case-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 24px; }
 .shell-note { padding: 26px; border: 2px dashed var(--ink); border-radius: 14px; background: var(--cream-2); }
+.case-figure { margin: 32px 0; }
+.case-figure img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--paper-edge); }
+.case-figure figcaption { margin-top: 10px; color: var(--ink-soft); font-size: .9rem; }

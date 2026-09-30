@@ -17,3 +17,13 @@
 .case-figure { margin: 32px 0; }
 .case-figure img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--paper-edge); }
 .case-figure figcaption { margin-top: 10px; color: var(--ink-soft); font-size: .9rem; }
+.overview-role { font-size: .95rem; }
+.download-detail { font-size: .85rem; color: var(--ink-soft); }
+.case-body .margin-overview-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 30px; align-items: start; margin: 28px 0; }
+.overview-visual { margin: 0; }
+.overview-visual img { width: 100%; height: auto; border-radius: 8px; }
+.overview-visual figcaption { margin-top: 10px; font-size: .85rem; color: var(--ink-soft); }
+.overview-points h2 { font-size: 1.2rem; margin-bottom: 8px; }
+.overview-points p { margin: 0 0 22px; font-size: .95rem; }
+.overview-status { border-top: 1px solid var(--paper-edge); padding-top: 20px; font-size: .9rem; color: var(--ink-soft); }
+@media (max-width: 720px) { .case-body .margin-overview-grid { grid-template-columns: 1fr; } }

@@ -1,59 +1,41 @@
 ---
+import { Image } from 'astro:assets';
 import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
-import CaseStudyFigure from '../../components/CaseStudyFigure.astro';
-import cover from '../../assets/margin/cover.png';
-import signals from '../../assets/margin/signals.png';
 import map from '../../assets/margin/map.png';
-import call from '../../assets/margin/call.png';
-import outcome from '../../assets/margin/outcome.png';
-import debrief from '../../assets/margin/debrief.png';
 ---
 <CaseStudyLayout title="The Margin" category="Learning Experience Design" subtitle="Designing judgment under ambiguity">
   <div slot="hero">
-    <p>An interactive field journal designed to help early-career professionals practice calibrated autonomy: deciding when to proceed, investigate, modify, or escalate as conditions change.</p>
-    <dl class="case-meta">
-      <div><dt>Role</dt><dd>Learning Experience Designer</dd></div>
-      <div><dt>Format</dt><dd>Interactive scenario prototype</dd></div>
-      <div><dt>Setting</dt><dd>Fictional Northstar Outdoor Experiences</dd></div>
-    </dl>
-    <div class="case-cta"><a class="btn btn-solid" href="/the-margin">Try The Margin →</a><a class="btn" href="#challenge">Read the case study</a></div>
+    <p>A fictional field-journal experience where early-career professionals practice noticing changing conditions, revising a plan, and making a call they can explain.</p>
+    <p class="overview-role"><strong>My role:</strong> Learning Experience Designer · <strong>Format:</strong> Interactive prototype</p>
+    <div class="case-cta">
+      <a class="btn btn-solid" href="/the-margin">Try The Margin →</a>
+      <a class="btn" href="/downloads/the-margin-case-study.pdf" download="the-margin-case-study.pdf">Download the case study (PDF)</a>
+    </div>
+    <p class="download-detail">5 pages · 2.3 MB · Design rationale, screenshots, and reflection</p>
   </div>
-  <CaseStudyFigure image={cover} eager alt="The Margin opening field journal introduces Eli's task: notice what is known, test assumptions, and make an explainable route call." caption="The field journal frames the learner's task before the first decision." />
-  <section id="challenge">
-    <h2>The challenge</h2>
-    <p>A reasonable decision can become unreasonable without any single dramatic warning. A late departure, changing weather, and a participant's increasing knee discomfort may each seem manageable. Together, they can leave a trip leader with fewer safe options and less time to respond.</p>
-    <p>Northstar's fictional performance problem is broader than missing knowledge. Rapid growth, informal shadowing, fragmented information, and unclear decision boundaries make independent judgment harder. The design therefore starts with behavior and operating conditions, rather than assuming a course will solve everything. Clearer authority, shared updates, and practical field support would also be needed.</p>
-    <p>The learning challenge is specific: give people a place to notice interacting signals, revise a plan, and explain their reasoning before momentum makes the decision for them.</p>
+
+  <section class="margin-overview-grid" aria-label="Project at a glance">
+    <figure class="overview-visual">
+      <a href={map.src} target="_blank" rel="noopener" aria-label="View the Laurel Junction map at full size">
+        <Image src={map} alt="The Laurel Junction map shows a longer ridge route, an available creek connector, and updates about increasing knee discomfort and earlier possible storms." widths={[400, 850]} sizes="(max-width: 720px) calc(100vw - 56px), 440px" format="webp" loading="eager" />
+      </a>
+      <figcaption>A living map makes changed conditions and remaining options visible.</figcaption>
+    </figure>
+
+    <div class="overview-points">
+      <div id="challenge">
+        <h2>The problem</h2>
+        <p>A late start, increasing knee discomfort, and an earlier storm forecast each look manageable. Together, they can make the original plan unreliable. The challenge is recognizing when to reassess.</p>
+      </div>
+      <div>
+        <h2>The approach</h2>
+        <p>Three decisions ask learners to prioritize information, separate evidence from assumptions, and recommend a response. A field journal and living map carry changing conditions through the outing.</p>
+      </div>
+      <div>
+        <h2>The design choice</h2>
+        <p>Preserve the group's purpose, rather than a fixed destination. Consequences and a decision-specific debrief show how timing, ownership, and communication affect the result.</p>
+      </div>
+    </div>
   </section>
-  <section>
-    <h2>The design framework</h2>
-    <p>Calibrated autonomy means acting independently while recognizing when the situation exceeds your information or authority. Four lenses shape the experience: risk, uncertainty, reversibility, and authority. What could go wrong? Which unknowns matter? Can this choice be undone? Who needs to be involved?</p>
-    <p>Those lenses support four responses: proceed, pause to investigate, modify, or escalate. They are ways to think, rather than a universal sequence. Escalation can be appropriate; it can also arrive too late or transfer a decision the learner could responsibly own.</p>
-    <p>A COM-B diagnosis informed the broader concept, considering capability, opportunity, and motivation. The prototype focuses on recognizing changed conditions and communicating a justified response within that larger system.</p>
-  </section>
-  <CaseStudyFigure image={signals} alt="At Laurel Junction, the learner selects three signals from pace, knee discomfort, weather, route options, and unverified assumptions." caption="Signal selection turns the framework into practice: distinguish evidence from hopes about what happens next." />
-  <section>
-    <h2>How the experience works</h2>
-    <p>Visitors take the role of Eli Torres, an associate trip leader guiding a ten-person corporate outing on Laurel Ridge. A field journal introduces the trip, while a living map shows movement, available routes, and changing conditions. Information arrives across the journey instead of appearing as a complete briefing.</p>
-    <p>Three decisions ask learners to prioritize information, identify the signals that most affect the plan, and choose a response with a situation update. The final call changes the route and outcome. Modifying can preserve the group experience; continuing can produce a credible near miss. A trail debrief connects the learner's choices to patterns in awareness, autonomy, and communication.</p>
-  </section>
-  <CaseStudyFigure image={map} alt="Laurel Junction route map shows the traveled path, longer ridge route, available creek connector, and updates about knee discomfort and earlier possible storms." caption="The living map carries timing, location, and available alternatives between journal pages." />
-  <section>
-    <h2>Three key design decisions</h2>
-    <h3>1. Make consequences do the teaching</h3>
-    <p>Options differ through timing, ownership, communication, and preserved alternatives. Feedback explains what a choice makes possible or harder. Learners can follow a fragile plan and see its consequences, which gives the debrief something concrete to examine.</p>
-    <h3>2. Make reassessment part of the work</h3>
-    <p>The journal and map separate a decision from the next update. This creates space to orient, observe movement, and reconsider. The state of “the margin” stays implicit: learners infer shrinking room to maneuver from the situation rather than watching a score meter.</p>
-    <h3>3. Preserve the underlying purpose</h3>
-    <p>The corporate organizer needs a meaningful team moment, not necessarily a particular overlook. A shorter creek route can preserve lunch, remarks, inclusion, and schedule. That distinction makes adaptation a professional judgment rather than an admission of failure, while keeping the participant's discomfort from becoming the story's blame point.</p>
-  </section>
-  <CaseStudyFigure image={call} alt="The route-call screen shows Modify selected and a reviewed update explaining the situation, operations support, and message to guests." caption="The learner must communicate the recommendation, not just choose a route." />
-  <CaseStudyFigure image={outcome} alt="The calibrated outcome keeps the group together beside the creek for Jordan's remarks, preserving the event's purpose on a changed route." caption="One possible outcome: the destination changes while the group gathering survives. Other choices lead to different consequences." />
-  <section>
-    <h2>Outcome and reflection</h2>
-    <p>The result is a playable prototype with branching outcomes, route transitions, and a decision-specific debrief. It demonstrates the intended practice experience; it does not establish improved workplace performance or reduced incidents. Northstar and the outing are fictional, and the experience uses generated character and environment imagery.</p>
-    <p>The next evaluation should examine whether learners recognize interacting risks earlier, make proportionate decisions, and communicate useful recommendations in a new scenario. Human-paced usability sessions should also test whether the map and journal help people understand changing conditions without adding unnecessary effort. The central design question remains: can learners explain when their original reasoning stopped holding?</p>
-    <div class="case-cta"><a class="btn btn-solid" href="/the-margin">Try The Margin →</a><a class="btn" href="/#portfolio">Back to selected work</a></div>
-  </section>
-  <CaseStudyFigure image={debrief} alt="The Calibrated navigator debrief traces departure, junction signals, route call, and a reusable field aid for future situation updates." caption="The debrief connects earlier choices to a pattern of judgment and a usable route-update aid." />
+  <p class="overview-status"><strong>Status:</strong> Playable fictional prototype, designed for judgment practice. Learning transfer and workplace impact have not been measured. Character and environment imagery is generated.</p>
 </CaseStudyLayout>

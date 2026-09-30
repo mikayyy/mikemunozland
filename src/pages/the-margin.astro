@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The Margin is a fictional field-journal learning experience about decisions under changing conditions.">
+  <title>The Margin — Field Journal</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/margin-prototype/styles.css">
+</head>
+<body>
+  <main class="experience">
+    <header class="prototype-bar">
+      <span>THE MARGIN</span>
+      <span>FIELD JOURNAL · <a href="/work/the-margin">CASE STUDY</a></span>
+    </header>
+
+    <section id="journal-stage" class="stage journal-stage" aria-live="off">
+      <article id="journal-page" class="journal-page" aria-labelledby="page-title">
+        <div class="paper-wear" aria-hidden="true"></div>
+        <div class="page-stain" aria-hidden="true"></div>
+        <div id="page-artifact" class="page-artifact" aria-hidden="true"></div>
+        <span id="page-marker" class="page-marker" aria-hidden="true"></span>
+        <div id="page-content" class="page-content"></div>
+        <div id="page-ephemera" class="page-ephemera" aria-hidden="true"></div>
+      </article>
+    </section>
+
+    <section id="map-stage" class="stage map-stage" aria-labelledby="map-heading" hidden>
+      <div class="map-copy">
+        <p id="map-phase" class="eyebrow">Route update</p>
+        <h2 id="map-heading">The route unfolds</h2>
+        <div class="map-story" aria-label="Route story">
+          <p id="map-orient-story" class="map-story-step" aria-hidden="true"><strong></strong><span></span></p>
+          <p id="map-move-story" class="map-story-step" aria-hidden="true"><strong></strong><span></span></p>
+          <p id="map-update-story" class="map-story-step" aria-hidden="true"><strong></strong><span></span></p>
+        </div>
+        <p class="map-context"><strong id="map-time"></strong><span id="map-place"></span><span id="map-status"></span></p>
+        <div id="map-decision-trace" class="map-decision-trace" hidden></div>
+      </div>
+      <div class="map-canvas">
+        <svg viewBox="0 0 1000 620" role="img" aria-labelledby="route-title route-desc">
+          <title id="route-title">Schematic map of Laurel Ridge</title>
+          <desc id="route-desc">From Laurel Junction, the original route descends around a high ridge spur to the overlook. Nested contours mark the overlook's high ground, while open contours bend toward a separate, lower creek drainage beside the shorter connector. The map also distinguishes traveled ground, decisions, and the group's current location.</desc>
+          <g class="topography" aria-hidden="true">
+            <path d="M40 -20 C100 80 100 330 160 480 C220 670 480 720 690 670 C900 650 1020 390 1100 -20" />
+            <path d="M190 -20 C250 80 255 235 320 295 C380 360 495 356 570 349 C690 344 760 398 800 375 C900 315 900 150 960 -20" />
+            <path d="M260 -20 C310 70 315 210 375 270 C430 328 520 326 580 320 C670 315 735 365 780 338 C850 290 850 130 900 -20" />
+            <path d="M325 -20 C365 70 370 190 420 245 C470 298 535 298 590 291 C665 288 710 335 760 307 C810 270 805 110 840 -20" />
+            <path d="M385 -20 C420 65 420 170 455 218 C500 270 545 270 600 264 C665 260 690 305 740 280 C770 250 760 90 780 -20" />
+            <path d="M260 500 C260 440 345 402 480 402 C610 402 750 446 815 488 C835 500 835 512 812 523 C720 572 605 602 480 603 C335 604 260 562 260 500 Z" />
+            <path d="M286 500 C286 451 360 426 480 426 C590 426 706 458 764 491 C783 500 783 510 761 521 C684 557 585 581 480 581 C355 581 286 550 286 500 Z" />
+            <path d="M313 501 C313 461 374 448 480 448 C576 448 674 470 716 493 C734 501 734 510 714 519 C651 545 567 562 480 562 C373 562 313 541 313 501 Z" />
+            <path d="M342 502 C342 472 390 466 481 466 C558 466 639 482 673 495 C690 501 690 509 670 518 C619 536 546 546 481 546 C390 546 342 529 342 502 Z" />
+            <path d="M377 503 C377 482 412 481 483 481 C548 481 601 490 631 498 C646 502 646 508 629 514 C590 528 530 535 483 535 C414 535 377 522 377 503 Z" />
+            <path d="M416 506 C416 494 442 492 484 492 C526 492 562 499 580 503 C591 506 591 511 578 515 C548 525 513 528 484 528 C442 528 416 520 416 506 Z" />
+          </g>
+          <path id="route-approach" class="route-base" d="M52 199 L112 212" />
+          <path id="route-approach-traveled" class="route-traveled" d="M52 199 L112 212" />
+          <path id="route-to-junction" class="route-base" d="M112 212 C174 191 190 154 253 181 C301 201 320 248 392 240" />
+          <path id="route-original" class="route-base" d="M392 240 C435 280 420 395 480 470 C505 510 535 530 560 525 C615 530 640 495 665 461 C711 397 690 350 742 292 C820 220 900 140 1040 80" />
+          <path id="route-traveled" class="route-traveled" d="M112 212 C174 191 190 154 253 181 C301 201 320 248 392 240" />
+          <path id="route-alternate" class="alternate-route" d="M392 240 C475 185 512 315 576 265 C650 222 681 279 742 292" />
+          <path id="route-selected" class="route-selected" d="M392 240 C475 185 512 315 576 265 C650 222 681 279 742 292" />
+          <path id="route-committed" class="route-committed" d="M392 240 C475 185 512 315 576 265 C650 222 681 279 742 292" />
+          <path id="route-ridge-progress" class="route-traveled" d="M392 240 C435 280 420 395 480 470 C505 510 535 530 560 525" />
+          <path id="route-return" class="route-return" d="M392 240 C320 248 301 201 253 181 C190 154 174 191 112 212" />
+          <g class="route-labels" aria-hidden="true"><text x="469" y="172">Creek connector · shortcut</text><text x="473" y="578">Original ridge route · longer bend</text></g>
+          <g class="landmarks">
+            <g transform="translate(112 212)"><circle r="11"/><text x="-7" y="-27">Trailhead</text></g>
+            <g transform="translate(742 292)"><circle r="11"/><text x="21" y="5">Creek clearing</text></g>
+            <g id="overlook-poi" transform="translate(560 525)"><circle r="11"/><text x="-26" y="-20" text-anchor="end">Overlook</text></g>
+          </g>
+          <g id="pace-checkpoint" transform="translate(253 181)"><circle r="7"/><text x="17" y="-12">First pace check</text></g>
+          <g class="decision-marker decision-one" transform="translate(112 265)"><title>Decision 1: at the trailhead</title><line class="leader" x1="0" y1="-17" x2="0" y2="-53"/><path d="M0 -17 L17 0 L0 17 L-17 0 Z"/><text class="number" y="5">1</text></g>
+          <g class="decision-marker decision-two" transform="translate(405 195)"><title>Decisions 2 and 3: both at Laurel Junction</title><line class="leader" x1="-5" y1="17" x2="-13" y2="45"/><path d="M0 -18 L18 0 L0 18 L-18 0 Z"/><text class="number" y="5">2</text><text class="co-located" x="23" y="5">+ 3 · same junction</text></g>
+          <g id="junction-condition" class="map-condition" transform="translate(360 65)">
+            <path d="M32 78 L32 175"/>
+            <rect width="244" height="78" rx="2"/>
+            <text x="14" y="25">Laurel Junction</text>
+            <text x="14" y="48">Knee discomfort increasing</text>
+            <text x="14" y="68">Storm window moving earlier</text>
+          </g>
+          <g id="outcome-condition" class="map-condition" transform="translate(680 400)">
+            <path d="M62 0 L62 -108"/>
+            <rect width="247" height="78" rx="2"/>
+            <text id="condition-title" x="14" y="25">Creek clearing</text>
+            <text id="condition-line-one" x="14" y="48">The group stays together</text>
+            <text id="condition-line-two" x="14" y="68">Lunch and remarks preserved</text>
+          </g>
+          <g id="map-marker" class="map-marker" transform="translate(52 199)"><title>Current location of Eli and the group</title><circle class="marker-ring" r="25"/><circle class="marker-dot" r="12"/></g>
+        </svg>
+        <p id="mobile-map-summary" class="mobile-map-summary"></p>
+        <div class="map-legend" aria-label="Route legend">
+          <span><i class="swatch traveled" aria-hidden="true"></i>Traveled</span>
+          <span><i class="swatch original" aria-hidden="true"></i>Original plan</span>
+          <span><i class="swatch alternate" aria-hidden="true"></i>Available alternate</span>
+          <span id="selected-route-legend"><i class="swatch selected" aria-hidden="true"></i><span id="selected-route-label">Selected at departure</span></span>
+          <span><i class="swatch committed" aria-hidden="true"></i>Committed route</span>
+          <span><i class="decision-swatch" aria-hidden="true">#</i>Decision point</span>
+        </div>
+      </div>
+      <button id="map-continue" class="map-continue" type="button" hidden>Open the next field note</button>
+      <button id="skip-transition" class="map-skip" type="button">Skip animation</button>
+      <p id="map-announcement" class="sr-only" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script is:inline src="/margin-prototype/app.js"></script>
+</body>
+</html>

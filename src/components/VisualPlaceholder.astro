@@ -1,0 +1,8 @@
+---
+interface Props { title: string; caption: string; }
+const { title, caption } = Astro.props;
+---
+<figure class="visual-placeholder">
+  <div class="visual-frame"><strong>{title}</strong><span>Visual placeholder</span></div>
+  <figcaption>{caption}</figcaption>
+</figure>

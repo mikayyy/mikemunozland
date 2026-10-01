@@ -2,6 +2,8 @@
 import PortfolioLayout from '../layouts/PortfolioLayout.astro';
 import WorkCard from '../components/WorkCard.astro';
 import marginCover from '../assets/margin/cover.png';
+import bootcampImage from '../assets/bootcamp/lifecycle.png';
+import architectureImage from '../assets/architecture/model.png';
 ---
 <PortfolioLayout home>
 <main id="top">
@@ -125,10 +127,10 @@ import marginCover from '../assets/margin/cover.png';
       </div>
       <div class="port-grid">
         <WorkCard title="The Margin" category="Learning Experience Design" href="/work/the-margin" image={marginCover} imageAlt="The Margin field-journal cover with pressed blue flowers" summary="An interactive field journal for practicing judgment under changing conditions. Explore the design, then take the trail as Eli Torres." />
-        <WorkCard title="Delivery Lead Bootcamp" category="Leadership Development" href="/work/delivery-lead-bootcamp" summary="A pilot leadership bootcamp designed to surface questions about the operating model, technology, and delivery assumptions before full development. Case study coming soon." />
-        <WorkCard title="CT&I Learning Architecture & Strategy" category="Learning Strategy" href="/work/cti-learning-architecture" summary="A look at learning architecture and strategy. The project context, design approach, and supporting artifacts will be added in the full case study." />
+        <WorkCard title="Delivery Lead Bootcamp" category="Program Design" href="/work/delivery-lead-bootcamp" image={bootcampImage} imageAlt="Initiate, Deliver, Renew: the Bootcamp engagement-lifecycle sequence" summary="A three-day program that turns Delivery Lead expectations into an engagement-lifecycle agenda, team practice, and an applied capstone." />
+        <WorkCard title="Shared Learning Architecture & Strategy" category="Learning Strategy" href="/work/cti-learning-architecture" image={architectureImage} imageAlt="Shared expectations connect specialized pathways, practice, resources, and measurement" summary="A common core and specialized pathways connect learning initiatives into one operating model, with practice and support close to the work." />
       </div>
-      <div class="port-note">The Margin is available to explore now. Delivery Lead Bootcamp and CT&amp;I Learning Architecture &amp; Strategy case studies are coming soon.</div>
+      <div class="port-note">Explore a short overview of each project, then download the fuller case study. The Margin also includes a playable experience.</div>
     </div>
   </section>
 

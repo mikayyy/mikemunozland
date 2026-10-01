@@ -1,11 +1,22 @@
 ---
-import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+import ProjectOverview from '../../components/ProjectOverview.astro';
+import model from '../../assets/architecture/model.png';
 ---
-<CaseStudyLayout title="CT&I Learning Architecture & Strategy" category="Learning Strategy" subtitle="Case study coming soon">
-  <section class="shell-note" aria-labelledby="status-heading">
-    <h2 id="status-heading">A closer look is on its way</h2>
-    <p>This page will share the project context, my role, the design approach, selected artifacts, and outcomes once the case study is ready.</p>
-    <p>In the meantime, explore The Margin for a playable example of my learning experience design work.</p>
-    <div class="case-cta"><a class="btn btn-solid" href="/work/the-margin">Explore The Margin</a><a class="btn" href="/#portfolio">Back to selected work</a></div>
-  </section>
-</CaseStudyLayout>
+<ProjectOverview
+  title="Shared Learning Architecture & Strategy"
+  category="Learning Strategy & Capability Architecture"
+  subtitle="One core. Many ways to put it to work."
+  intro="Connecting several active learning efforts into one system: shared expectations, specialized pathways, and practice and support close to the work."
+  role="Led the learning architecture, collaborating with leadership to develop and execute the strategy."
+  image={model}
+  imageAlt="A shared core of expectations and behavior standards feeds specialized pathways, supported by learning journeys, a resource hub, contribution, reuse, and a measurement approach."
+  caption="A new illustration of the operating model, using generic public names."
+  pdf="/downloads/shared-learning-architecture-case-study.pdf"
+  downloadDetail="2 pages · About 300 KB · Architecture decisions, work-based support, and measurement"
+  points={[
+    { title: 'The problem', text: 'Several learning initiatives were underway, but the group needed common expectations and behavior standards without flattening the work of its specialized capabilities.' },
+    { title: 'The approach', text: 'Start with observable behavior, establish a common core, and connect specialized pathways with learning journeys, resources, contribution, and reuse.' },
+    { title: 'The design choice', text: 'Place practice and feedback near real tasks. A discovery-call coaching prompt for UX projects is one operating example; capability leaders help validate the framework and own success measures.' },
+  ]}
+  status="The architecture is operating, based on my account. Usage and contribution signals do not establish improved behavior or business outcomes. Group and initiative names are changed for confidentiality."
+/>

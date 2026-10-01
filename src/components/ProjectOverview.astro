@@ -1,0 +1,35 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import CaseStudyLayout from '../layouts/CaseStudyLayout.astro';
+interface Props {
+  title: string; category: string; subtitle: string; intro: string; role: string;
+  image: ImageMetadata; imageAlt: string; caption: string;
+  pdf: string; downloadDetail: string; status: string;
+  points: { title: string; text: string }[];
+}
+const props = Astro.props;
+---
+<CaseStudyLayout title={props.title} category={props.category} subtitle={props.subtitle}>
+  <div slot="hero">
+    <p>{props.intro}</p>
+    <p class="overview-role"><strong>My role:</strong> {props.role}</p>
+    <div class="case-cta">
+      <a class="btn btn-solid" href={props.pdf} download>Download the case study (PDF)</a>
+      <a class="btn" href={props.pdf} target="_blank" rel="noopener">Read the PDF</a>
+    </div>
+    <p class="download-detail">{props.downloadDetail}</p>
+  </div>
+  <section class="margin-overview-grid" aria-label="Project at a glance">
+    <figure class="overview-visual">
+      <a href={props.image.src} target="_blank" rel="noopener" aria-label={`View full-size visual: ${props.title}`}>
+        <Image src={props.image} alt={props.imageAlt} widths={[400, 850]} sizes="(max-width: 720px) calc(100vw - 56px), 440px" format="webp" loading="eager" />
+      </a>
+      <figcaption>{props.caption}</figcaption>
+    </figure>
+    <div class="overview-points">
+      {props.points.map(point => <div><h2>{point.title}</h2><p>{point.text}</p></div>)}
+    </div>
+  </section>
+  <p class="overview-status"><strong>Evidence:</strong> {props.status}</p>
+</CaseStudyLayout>

@@ -1,0 +1,253 @@
+{
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Performance strategy / Program design"
+        },
+        {
+          "type": "h1",
+          "text": "Delivery Lead Bootcamp"
+        },
+        {
+          "type": "p",
+          "text": "A clearer starting point for a complex role."
+        },
+        {
+          "type": "p",
+          "text": "As the managed services ERP systems practice grew, more people entered Delivery Lead roles. Leadership acted early: varied experience and a few warning signs suggested uneven preparation before larger engagements."
+        },
+        {
+          "type": "p",
+          "text": "THE PROGRAM THROUGHLINE"
+        },
+        {
+          "type": "h2",
+          "text": "Follow the work."
+        },
+        {
+          "type": "li",
+          "text": "Initiate Set expectations and governance"
+        },
+        {
+          "type": "li",
+          "text": "Deliver Lead operations and risk"
+        },
+        {
+          "type": "li",
+          "text": "Renew Show value at renewal"
+        },
+        {
+          "type": "p",
+          "text": "MY ROLE"
+        },
+        {
+          "type": "p",
+          "text": "I led the design workstream and built the program blueprint."
+        },
+        {
+          "type": "p",
+          "text": "I scheduled stakeholder meetings, guided session workstreams, and oversaw delivery. The program was designed and delivered with the broader team."
+        },
+        {
+          "type": "p",
+          "text": "Audience ranged from Senior Associates through Directors."
+        },
+        {
+          "type": "h2",
+          "text": "How I framed it."
+        },
+        {
+          "type": "p",
+          "text": "Looking back, this was a readiness risk, not a documented decline. The map clarified expectations; simulations and peers supported practice. Training alone was not enough. I proposed coaching afterward."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "Three days. One engagement arc."
+        },
+        {
+          "type": "p",
+          "text": "Leaders considered urgent topics first. I advocated for the engagement lifecycle so each day built toward the capstone. Leadership agreed; I think the sequence felt more cohesive."
+        },
+        {
+          "type": "p",
+          "text": "Illustrative agenda · adapted session titles"
+        },
+        {
+          "type": "li",
+          "text": "DAY 01 Launch the engagement Program welcome Cohort connections Starting a client engagement Working across cultures"
+        },
+        {
+          "type": "li",
+          "text": "DAY 02 Lead the delivery AI in delivery decisions AI judgment lab Commercial tradeoffs Service operations"
+        },
+        {
+          "type": "li",
+          "text": "DAY 03 Close and renew Quality signals and risk Closing and continuing the work Final case challenge · 2 hours"
+        },
+        {
+          "type": "p",
+          "text": "Sessions ran 45–90 minutes, longer for priority topics. After lunch: protected work time."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "What we wanted Delivery Leads to do."
+        },
+        {
+          "type": "p",
+          "text": "These were program aims. They are not claims of measured performance gains."
+        },
+        {
+          "type": "h3",
+          "text": "Outcome ownership"
+        },
+        {
+          "type": "p",
+          "text": "Lead the engagement"
+        },
+        {
+          "type": "p",
+          "text": "Clarify ownership and take responsibility for delivery decisions."
+        },
+        {
+          "type": "p",
+          "text": "PRACTICE Launch planning and team scenarios"
+        },
+        {
+          "type": "h3",
+          "text": "Business Context & Responsible Delivery"
+        },
+        {
+          "type": "p",
+          "text": "Run the business"
+        },
+        {
+          "type": "p",
+          "text": "Weigh risk, quality, finances, and client value in delivery decisions."
+        },
+        {
+          "type": "p",
+          "text": "PRACTICE Operational scenarios and capstone"
+        },
+        {
+          "type": "h3",
+          "text": "AI-Native Delivery"
+        },
+        {
+          "type": "p",
+          "text": "Deliver through AI"
+        },
+        {
+          "type": "p",
+          "text": "Use AI-assisted inputs with human judgment and accountability."
+        },
+        {
+          "type": "p",
+          "text": "PRACTICE AI judgment lab and capstone"
+        },
+        {
+          "type": "p",
+          "text": "Across all three, cultural agility, a service mindset, and peer learning shaped the practice."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "The capstone put those decisions together."
+        },
+        {
+          "type": "p",
+          "text": "Just before the capstone, teams met a fictional client: 90 minutes for decisions, then 30 for presentations and feedback."
+        },
+        {
+          "type": "p",
+          "text": "DECISION AREAS Launch · Recovery · Finances · Quality · Renewal · AI use"
+        },
+        {
+          "type": "h3",
+          "text": "A decision under pressure."
+        },
+        {
+          "type": "p",
+          "text": "When ticket handoffs stall resolution, who owns recovery, and when should the Delivery Lead escalate?"
+        },
+        {
+          "type": "p",
+          "text": "This newly written RAID (risks, assumptions, issues, dependencies) excerpt shows the kind of decision evidence an activity could surface. It is not an original participant artifact."
+        },
+        {
+          "type": "dt",
+          "text": "RISK OR ISSUE"
+        },
+        {
+          "type": "dd",
+          "text": "Unclear ticket handoffs delay resolution and obscure accountability."
+        },
+        {
+          "type": "dt",
+          "text": "OWNER & NEXT ACTION"
+        },
+        {
+          "type": "dd",
+          "text": "The Delivery Lead assigns a handoff owner, reviews open work, and confirms the recovery path with the client contact."
+        },
+        {
+          "type": "dt",
+          "text": "ESCALATION TRIGGER"
+        },
+        {
+          "type": "dd",
+          "text": "Escalate through agreed governance if ownership stays unresolved or the recovery plan risks a client commitment."
+        },
+        {
+          "type": "dt",
+          "text": "WHY"
+        },
+        {
+          "type": "dd",
+          "text": "One named owner restores accountability before speed. The trigger keeps the client commitment visible."
+        },
+        {
+          "type": "p",
+          "text": "A strong entry shows the action and the reasoning: why this owner, why this trigger."
+        },
+        {
+          "type": "p",
+          "text": "“We would validate sustained performance with the client before calling the improvement durable.”"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "What we heard. What I'd change next time."
+        },
+        {
+          "type": "p",
+          "text": "Respondents reported applicable skills, rated the program highly, and felt confident they understood the Delivery Lead role. Launch and cross-cultural sessions were especially valued; leadership feedback was positive."
+        },
+        {
+          "type": "p",
+          "text": "After observing the Bootcamp, I proposed more preparation, longer simulations, lighter content, stronger behavior assessment, capstone evidence criteria, and follow-up coaching."
+        },
+        {
+          "type": "p",
+          "text": "The available account does not include survey response counts, capstone scores, or post-program delivery measures. Reported confidence and value do not establish improved job performance. The next-iteration items above were proposals."
+        }
+      ]
+    }
+  ],
+  "disclosure": "About this case. This is a confidentiality-safe account of real program work. The scenario, RAID entry, and renewal excerpt are newly created illustrative reconstructions. No original internal materials appear here."
+}

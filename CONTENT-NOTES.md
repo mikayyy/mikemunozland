@@ -1,6 +1,6 @@
 # Launch routes and remaining content
 
-The homepage uses `michael-munoz-portfolio.html` from the user's Downloads folder as its canonical source. Original CSS and content outside Selected Work are preserved, apart from the user's requested PwC design-leadership wording.
+The homepage uses `michael-munoz-portfolio.html` from the user's Downloads folder as its canonical source. The original visual language and homepage prose are preserved, including the user's requested PwC design-leadership wording. The later site polish adds responsive navigation, focus states, small-screen spacing, and targeted contrast corrections.
 
 ## Structure
 
@@ -19,7 +19,7 @@ The homepage uses `michael-munoz-portfolio.html` from the user's Downloads folde
 2. Additional measured outcome evidence if stronger performance claims are desired. The current case studies distinguish intended audience and capabilities, reported perceptions, proposed improvements, activity measures, and demonstrated outcomes.
 3. The wider site review: branding consistency, accessibility, mobile usability, navigation, metadata, and final copy polish. PDFs are not tagged; assistive-technology review remains outstanding.
 
-Full branding, accessibility, mobile, navigation, and SEO review remains a later milestone. The original homepage's resume claims, contact details, and Google Fonts remain as supplied, except the approved PwC wording revision.
+The later website polish milestone is recorded below. The original homepage's resume claims, contact details, and Google Fonts remain as supplied, except the approved PwC wording revision.
 
 ## Run locally
 
@@ -64,3 +64,11 @@ Shared Learning Architecture uses the existing `cti-learning-architecture/site` 
 Validation: production build passed. Browser checks covered both short pages, actual downloaded bytes/filenames, opening PDFs in a new tab, return links, three loaded card images, and no horizontal overflow at 320, 390, 768, and 1440 pixels. All eight PDF pages were rendered and inspected. Text extraction confirmed the existing source blocks and disclosures were retained, with no employer/vendor/internal group names. No failed local asset requests or JavaScript errors were observed.
 
 PDF layout refinement: the final downloads return to a single reading column with 11-point body text. Three Bootcamp pages and two architecture pages balance the original sparse layout against the overly compact revision. The homepage MM mark, dark badges, rust accents, cream cards, and torn-edge polygon dividers carry the website visual language into the PDFs. The agenda and RAID regain structured typography; all source narrative and disclosures remain. All five pages were rendered and visually checked, and extracted text confirms content retention.
+
+## Website polish after the approved case studies
+
+PR #2 was squash-merged as `9edd976`. A separate review branch adds mobile navigation and a visible Email button, named navigation landmarks and home link, keyboard skip/focus states, one link per work card, reduced-motion handling, mobile case-study spacing and CTA stacking, and two targeted contrast corrections. The established homepage palette, shapes, typography, and all prose remain.
+
+The user confirmed `https://mikemunozland.com` as the primary public address. The shared metadata component supplies unique page descriptions, canonical and sharing URLs, an MM favicon, and a 1200-by-630 sharing card. Build-time sitemap and robots endpoints reference the production origin. A branded noindex 404 offers recovery links. No domain, DNS, host protection, or manual production deployment configuration is changed.
+
+Verification: the static build emits six HTML pages plus sitemap and robots files. Browser checks cover the five visitor routes at 320, 390, 768, 900, 1024, and 1440 pixels; keyboard skip links; menu opening, Escape/focus return, link selection and outside-click dismissal; native mobile navigation with JavaScript disabled; one keyboard stop per card; exact downloaded bytes for all three PDFs; and the Margin launch, journal opening, trail entry, and return link. Metadata URLs, unique descriptions, image loading, reduced-motion settings, and 404 recovery are checked. Screenshots are visually inspected. This is a focused website accessibility pass, not certification; PDF tagging and a broader assistive-technology review remain available as follow-up work.

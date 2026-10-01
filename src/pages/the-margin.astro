@@ -1,15 +1,19 @@
+---
+import SiteMetadata from '../components/SiteMetadata.astro';
+---
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The Margin is a fictional field-journal learning experience about decisions under changing conditions.">
+  <SiteMetadata title="The Margin — Field Journal" description="Take the trail as Eli Torres in a fictional field-journal experience. Practice noticing changed conditions, revising a plan, and making a route call." />
   <title>The Margin — Field Journal</title>
-  <link rel="icon" href="data:,">
+
   <link rel="stylesheet" href="/margin-prototype/styles.css">
 </head>
 <body>
-  <main class="experience">
+  <a class="skip-link" href="#main-content">Skip to the field journal</a>
+  <main id="main-content" tabindex="-1" class="experience">
     <header class="prototype-bar">
       <span>THE MARGIN</span>
       <span>FIELD JOURNAL · <a href="/work/the-margin">CASE STUDY</a></span>

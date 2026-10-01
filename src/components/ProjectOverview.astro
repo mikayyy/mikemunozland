@@ -10,7 +10,7 @@ interface Props {
 }
 const props = Astro.props;
 ---
-<CaseStudyLayout title={props.title} category={props.category} subtitle={props.subtitle}>
+<CaseStudyLayout title={props.title} category={props.category} subtitle={props.subtitle} description={props.intro}>
   <div slot="hero">
     <p>{props.intro}</p>
     <p class="overview-role"><strong>My role:</strong> {props.role}</p>

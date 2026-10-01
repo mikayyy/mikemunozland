@@ -1,0 +1,53 @@
+{
+  "title": "The Margin",
+  "intro": "An interactive field journal designed to help early-career professionals practice calibrated autonomy: deciding when to proceed, investigate, modify, or escalate as conditions change.",
+  "sections": [
+    {
+      "heading": "The challenge",
+      "paragraphs": [
+        "A reasonable decision can become unreasonable without any single dramatic warning. A late departure, changing weather, and a participant's increasing knee discomfort may each seem manageable. Together, they can leave a trip leader with fewer safe options and less time to respond.",
+        "Northstar's fictional performance problem is broader than missing knowledge. Rapid growth, informal shadowing, fragmented information, and unclear decision boundaries make independent judgment harder. The design therefore starts with behavior and operating conditions, rather than assuming a course will solve everything. Clearer authority, shared updates, and practical field support would also be needed.",
+        "The learning challenge is specific: give people a place to notice interacting signals, revise a plan, and explain their reasoning before momentum makes the decision for them."
+      ],
+      "subheads": []
+    },
+    {
+      "heading": "The design framework",
+      "paragraphs": [
+        "Calibrated autonomy means acting independently while recognizing when the situation exceeds your information or authority. Four lenses shape the experience: risk, uncertainty, reversibility, and authority. What could go wrong? Which unknowns matter? Can this choice be undone? Who needs to be involved?",
+        "Those lenses support four responses: proceed, pause to investigate, modify, or escalate. They are ways to think, rather than a universal sequence. Escalation can be appropriate; it can also arrive too late or transfer a decision the learner could responsibly own.",
+        "A COM-B diagnosis informed the broader concept, considering capability, opportunity, and motivation. The prototype focuses on recognizing changed conditions and communicating a justified response within that larger system."
+      ],
+      "subheads": []
+    },
+    {
+      "heading": "How the experience works",
+      "paragraphs": [
+        "Visitors take the role of Eli Torres, an associate trip leader guiding a ten-person corporate outing on Laurel Ridge. A field journal introduces the trip, while a living map shows movement, available routes, and changing conditions. Information arrives across the journey instead of appearing as a complete briefing.",
+        "Three decisions ask learners to prioritize information, identify the signals that most affect the plan, and choose a response with a situation update. The final call changes the route and outcome. Modifying can preserve the group experience; continuing can produce a credible near miss. A trail debrief connects the learner's choices to patterns in awareness, autonomy, and communication."
+      ],
+      "subheads": []
+    },
+    {
+      "heading": "Three key design decisions",
+      "paragraphs": [
+        "Options differ through timing, ownership, communication, and preserved alternatives. Feedback explains what a choice makes possible or harder. Learners can follow a fragile plan and see its consequences, which gives the debrief something concrete to examine.",
+        "The journal and map separate a decision from the next update. This creates space to orient, observe movement, and reconsider. The state of “the margin” stays implicit: learners infer shrinking room to maneuver from the situation rather than watching a score meter.",
+        "The corporate organizer needs a meaningful team moment, not necessarily a particular overlook. A shorter creek route can preserve lunch, remarks, inclusion, and schedule. That distinction makes adaptation a professional judgment rather than an admission of failure, while keeping the participant's discomfort from becoming the story's blame point."
+      ],
+      "subheads": [
+        "1. Make consequences do the teaching",
+        "2. Make reassessment part of the work",
+        "3. Preserve the underlying purpose"
+      ]
+    },
+    {
+      "heading": "Outcome and reflection",
+      "paragraphs": [
+        "The result is a playable prototype with branching outcomes, route transitions, and a decision-specific debrief. It demonstrates the intended practice experience; it does not establish improved workplace performance or reduced incidents. Northstar and the outing are fictional, and the experience uses generated character and environment imagery.",
+        "The next evaluation should examine whether learners recognize interacting risks earlier, make proportionate decisions, and communicate useful recommendations in a new scenario. Human-paced usability sessions should also test whether the map and journal help people understand changing conditions without adding unnecessary effort. The central design question remains: can learners explain when their original reasoning stopped holding?"
+      ],
+      "subheads": []
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+---
+interface Props { home?: boolean; }
+const { home = false } = Astro.props;
+const anchor = (id: string) => home ? `#${id}` : `/#${id}`;
+---
+<header class="nav">
+  <div class="nav-inner">
+    <a href={anchor("top")} style="display:flex; align-items:center; gap:12px; text-decoration:none;">
+      <span class="mark">MM</span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href={anchor("about")}>About</a></li>
+        <li><a href={anchor("capabilities")}>What I Do</a></li>
+        <li><a href={anchor("experience")}>Experience</a></li>
+        <li><a href={anchor("portfolio")}>Portfolio</a></li>
+        <li><a href={anchor("community")}>Beyond Work</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-solid" href="mailto:mikemunoz@gmail.com"><span class="long">Get in touch</span><span style="display:none;">Email</span></a>
+    </div>
+  </div>
+</header>

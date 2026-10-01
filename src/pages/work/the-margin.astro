@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets';
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+import map from '../../assets/margin/map.png';
+---
+<CaseStudyLayout title="The Margin" category="Learning Experience Design" subtitle="Designing judgment under ambiguity">
+  <div slot="hero">
+    <p>A fictional field-journal experience where early-career professionals practice noticing changing conditions, revising a plan, and making a call they can explain.</p>
+    <p class="overview-role"><strong>My role:</strong> Learning Experience Designer · <strong>Format:</strong> Interactive prototype</p>
+    <div class="case-cta">
+      <a class="btn btn-solid" href="/the-margin">Try The Margin →</a>
+      <a class="btn" href="/downloads/the-margin-case-study.pdf" download="the-margin-case-study.pdf">Download the case study (PDF)</a>
+    </div>
+    <p class="download-detail">5 pages · 2.3 MB · Design rationale, screenshots, and reflection</p>
+  </div>
+
+  <section class="margin-overview-grid" aria-label="Project at a glance">
+    <figure class="overview-visual">
+      <a href={map.src} target="_blank" rel="noopener" aria-label="View the Laurel Junction map at full size">
+        <Image src={map} alt="The Laurel Junction map shows a longer ridge route, an available creek connector, and updates about increasing knee discomfort and earlier possible storms." widths={[400, 850]} sizes="(max-width: 720px) calc(100vw - 56px), 440px" format="webp" loading="eager" />
+      </a>
+      <figcaption>A living map makes changed conditions and remaining options visible.</figcaption>
+    </figure>
+
+    <div class="overview-points">
+      <div id="challenge">
+        <h2>The problem</h2>
+        <p>A late start, increasing knee discomfort, and an earlier storm forecast each look manageable. Together, they can make the original plan unreliable. The challenge is recognizing when to reassess.</p>
+      </div>
+      <div>
+        <h2>The approach</h2>
+        <p>Three decisions ask learners to prioritize information, separate evidence from assumptions, and recommend a response. A field journal and living map carry changing conditions through the outing.</p>
+      </div>
+      <div>
+        <h2>The design choice</h2>
+        <p>Preserve the group's purpose, rather than a fixed destination. Consequences and a decision-specific debrief show how timing, ownership, and communication affect the result.</p>
+      </div>
+    </div>
+  </section>
+  <p class="overview-status"><strong>Status:</strong> Playable fictional prototype, designed for judgment practice. Learning transfer and workplace impact have not been measured. Character and environment imagery is generated.</p>
+</CaseStudyLayout>

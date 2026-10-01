@@ -15,5 +15,5 @@ const { title, category, summary, href, image, imageAlt = '' } = Astro.props;
 
 <style>
   .card-image-link { display: block; margin-bottom: 18px; }
-  .card-image { width: 100%; height: auto; border: 1px solid var(--paper-edge); border-radius: 4px; }
+  .card-image { width: 100%; height: auto; aspect-ratio: 16 / 11; object-fit: contain; background: var(--cream-2); border: 1px solid var(--paper-edge); border-radius: 4px; }
 </style>

@@ -1,11 +1,22 @@
 ---
-import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+import ProjectOverview from '../../components/ProjectOverview.astro';
+import lifecycle from '../../assets/bootcamp/lifecycle.png';
 ---
-<CaseStudyLayout title="Delivery Lead Bootcamp" category="Leadership Development" subtitle="Case study coming soon">
-  <section class="shell-note" aria-labelledby="status-heading">
-    <h2 id="status-heading">A closer look is on its way</h2>
-    <p>This page will share the project context, my role, the design approach, selected artifacts, and outcomes once the case study is ready.</p>
-    <p>In the meantime, explore The Margin for a playable example of my learning experience design work.</p>
-    <div class="case-cta"><a class="btn btn-solid" href="/work/the-margin">Explore The Margin</a><a class="btn" href="/#portfolio">Back to selected work</a></div>
-  </section>
-</CaseStudyLayout>
+<ProjectOverview
+  title="Delivery Lead Bootcamp"
+  category="Performance Strategy & Program Design"
+  subtitle="A clearer starting point for a complex role"
+  intro="A three-day program for a growing managed services ERP systems practice, connecting role expectations, engagement decisions, and applied team practice."
+  role="Led the design workstream and program blueprint within a shared design and delivery effort."
+  image={lifecycle}
+  imageAlt="The program throughline follows Initiate, Deliver, and Renew: set expectations and governance, lead operations and risk, then show value at renewal."
+  caption="The engagement lifecycle gave the agenda and capstone a shared arc."
+  pdf="/downloads/delivery-lead-bootcamp-case-study.pdf"
+  downloadDetail="5 pages · About 300 KB · Agenda, intended capabilities, capstone, and evidence"
+  points={[
+    { title: 'The problem', text: 'Rapid growth brought people with varied experience into Delivery Lead roles. Leadership acted on a readiness risk before a broad delivery failure. Approximately 50 employees were the intended audience.' },
+    { title: 'The approach', text: 'I advocated for an engagement-lifecycle sequence over urgent topics first. Three priorities became practice: outcome ownership, responsible business delivery, and AI-native delivery.' },
+    { title: 'The design choice', text: 'A team capstone brought launch, recovery, commercial, quality, renewal, and AI decisions together. Reconstructed examples show the reasoning an activity could surface.' },
+  ]}
+  status="Positive feedback reflects reaction and perceived learning, not measured job performance. Follow-up coaching and stronger assessment were proposed. Public examples are illustrative reconstructions."
+/>

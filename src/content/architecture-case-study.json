@@ -1,0 +1,93 @@
+{
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "p",
+          "text": "LEARNING STRATEGY / CAPABILITY ARCHITECTURE"
+        },
+        {
+          "type": "h1",
+          "text": "One core. Many ways to put it to work."
+        },
+        {
+          "type": "p",
+          "text": "Several learning efforts were already underway. The harder question was how to make them work as one system."
+        },
+        {
+          "type": "p",
+          "text": "What should be shared across the group, and what should each specialty make its own?"
+        },
+        {
+          "type": "p",
+          "text": "A groupwide learning program, new-hire development, entry resources, and specialist development paths were all in motion. The group needed common expectations, behavior standards, and a measurement approach while each capability developed its own practice."
+        },
+        {
+          "type": "p",
+          "text": "I led the learning architecture: defining the common core and behavior-first approach, then connecting pathways, practice, resources, and measurement into one operating model. I collaborated with leadership to develop and execute this strategy."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "Start with what people do. Then build the system around it."
+        },
+        {
+          "type": "p",
+          "text": "I separated human capabilities from organizational capabilities and moved the conversation away from a course list. Programs would begin with observable behaviors, then use practice, application, and support to help those behaviors show up in work."
+        },
+        {
+          "type": "p",
+          "text": "The central decision was a common core of competencies and expectations. Each specialized capability translates that core through its own pathways. Learning journeys, a resource hub, and ways to contribute and reuse approaches connect the pieces. The system is operating today."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "The practice is the point."
+        },
+        {
+          "type": "p",
+          "text": "AI-native workflows are one common-core expectation. The system also places practice and feedback close to real tasks."
+        },
+        {
+          "type": "p",
+          "text": "We created a coaching prompt to review people's performance during discovery calls for UX design projects. It puts reflection close to the work itself, alongside simulations, demonstrations, and reusable approaches."
+        },
+        {
+          "type": "p",
+          "text": "This example shows where support lives in the system. We are not claiming that the prompt improved call quality without an evaluation of that outcome."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "Measure the system. Then ask what changed."
+        },
+        {
+          "type": "p",
+          "text": "Capability leaders help validate the framework and own success measures. The current signals tell us about use and contribution. The longer-term test is whether this work improves performance and business outcomes."
+        },
+        {
+          "type": "p",
+          "text": "AI tool usage, PRs, GitHub pulls, and artifacts in the resource hub."
+        },
+        {
+          "type": "p",
+          "text": "These counts alone do not establish behavior quality or a business result."
+        },
+        {
+          "type": "p",
+          "text": "Specific values and outcome results are not included here. This case shows the operating architecture and the measurement approach, with those evidence limits made explicit."
+        }
+      ]
+    }
+  ],
+  "disclosure": "Confidentiality-safe adaptation of ongoing professional work. Group and initiative names have been changed."
+}

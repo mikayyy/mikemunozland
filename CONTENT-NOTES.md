@@ -11,7 +11,7 @@ The homepage uses `michael-munoz-portfolio.html` from the user's Downloads folde
 - `src/pages/the-margin.astro` contains the existing Margin field-journal HTML. Its vanilla JavaScript, CSS, and 13 WebP assets are in `public/margin-prototype/`. Absolute asset paths support both trailing-slash variants of the route. The prototype's case-study link now returns to `/work/the-margin`.
 - Astro maps page filenames to routes: https://docs.astro.build/en/guides/routing/
 - `ProjectOverview` provides the short Bootcamp and architecture pages with one visual, three points, role/context, evidence limits, and PDF download/read actions. Both are under 200 words including labels and buttons.
-- `scripts/build-program-pdfs.py` rebuilds the five-page Bootcamp and three-page architecture downloads from `src/content/bootcamp-case-study.json` and `src/content/architecture-case-study.json`. It uses the same Python libraries and font setup as the Margin generator. These JSON sources retain the latest public-facing project copy; the website build serves the checked-in PDFs.
+- `scripts/build-program-pdfs.py` rebuilds the two-page Bootcamp and one-page architecture downloads from `src/content/bootcamp-case-study.json` and `src/content/architecture-case-study.json`. It uses the same Python libraries and font setup as the Margin generator. These JSON sources retain the latest public-facing project copy; the website build serves the checked-in PDFs.
 
 ## Still needed
 
@@ -62,3 +62,5 @@ Bootcamp uses the existing `delivery-lead-bootcamp/site-v2` v0.5.0 beta, includi
 Shared Learning Architecture uses the existing `cti-learning-architecture/site` page and `site/assets/architecture.svg` reconstruction. Public display naming is generic, while `/work/cti-learning-architecture` remains stable. No proprietary competency definitions or real discovery-call materials are added. The operating status is attributed to the owner's account; usage and contribution measures are not presented as business results.
 
 Validation: production build passed. Browser checks covered both short pages, actual downloaded bytes/filenames, opening PDFs in a new tab, return links, three loaded card images, and no horizontal overflow at 320, 390, 768, and 1440 pixels. All eight PDF pages were rendered and inspected. Text extraction confirmed the existing source blocks and disclosures were retained, with no employer/vendor/internal group names. No failed local asset requests or JavaScript errors were observed.
+
+PDF layout refinement: compact editorial columns, typographic hierarchy, rust section labels, cream backgrounds, and shaded disclosure panels replace forced section-per-page layouts. Bootcamp agenda entries regain their hierarchy; the reconstructed RAID is typeset rather than duplicated as an image. All source narrative and disclosures remain. Final pages were rendered and visually reviewed; text extraction confirms source-copy retention.

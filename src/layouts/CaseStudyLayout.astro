@@ -1,11 +1,11 @@
 ---
 import PortfolioLayout from './PortfolioLayout.astro';
 import '../styles/case-study.css';
-interface Props { title: string; subtitle: string; category: string; }
-const { title, subtitle, category } = Astro.props;
+interface Props { title: string; subtitle: string; category: string; description?: string; }
+const { title, subtitle, category, description = subtitle } = Astro.props;
 ---
-<PortfolioLayout title={`${title} — Michael Muñoz`}>
-  <main id="top" class="case-study wrap">
+<PortfolioLayout title={`${title} — Michael Muñoz`} description={description}>
+  <main id="top" tabindex="-1" class="case-study wrap">
     <a class="back-link" href="/#portfolio">← Selected work</a>
     <header class="case-hero">
       <span class="pill">{category}</span>

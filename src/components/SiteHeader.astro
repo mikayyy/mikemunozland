@@ -2,23 +2,45 @@
 interface Props { home?: boolean; }
 const { home = false } = Astro.props;
 const anchor = (id: string) => home ? `#${id}` : `/#${id}`;
+const links = [
+  { id: 'about', label: 'About' },
+  { id: 'capabilities', label: 'What I Do' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'portfolio', label: 'Selected Work' },
+  { id: 'community', label: 'Beyond Work' },
+];
 ---
 <header class="nav">
   <div class="nav-inner">
-    <a href={anchor("top")} style="display:flex; align-items:center; gap:12px; text-decoration:none;">
-      <span class="mark">MM</span>
-    </a>
-    <nav>
-      <ul class="nav-links">
-        <li><a href={anchor("about")}>About</a></li>
-        <li><a href={anchor("capabilities")}>What I Do</a></li>
-        <li><a href={anchor("experience")}>Experience</a></li>
-        <li><a href={anchor("portfolio")}>Portfolio</a></li>
-        <li><a href={anchor("community")}>Beyond Work</a></li>
-      </ul>
+    <a class="home-link" href={anchor('top')} aria-label="Michael Muñoz — home"><span class="mark" aria-hidden="true">MM</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <ul class="nav-links">{links.map(link => <li><a href={anchor(link.id)}>{link.label}</a></li>)}</ul>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-solid" href="mailto:mikemunoz@gmail.com"><span class="long">Get in touch</span><span style="display:none;">Email</span></a>
+      <a class="btn btn-solid" href="mailto:mikemunoz@gmail.com"><span class="contact-long">Get in touch</span><span class="contact-short">Email</span></a>
+      <details class="mobile-menu">
+        <summary class="btn">Menu</summary>
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <ul>{links.map(link => <li><a href={anchor(link.id)}>{link.label}</a></li>)}</ul>
+        </nav>
+      </details>
     </div>
   </div>
 </header>
+<script>
+  // Native details keeps the menu usable even before JavaScript loads.
+  const menu = document.querySelector<HTMLDetailsElement>('.mobile-menu');
+  const summary = menu?.querySelector('summary');
+  menu?.addEventListener('click', event => {
+    if (event.target instanceof Element && event.target.closest('a')) menu.open = false;
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && menu?.open) {
+      menu.open = false;
+      summary?.focus();
+    }
+  });
+  document.addEventListener('click', event => {
+    if (event.target instanceof Node && menu?.open && !menu.contains(event.target)) menu.open = false;
+  });
+</script>

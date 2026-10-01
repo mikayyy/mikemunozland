@@ -1,0 +1,19 @@
+---
+import PortfolioLayout from '../layouts/PortfolioLayout.astro';
+---
+<PortfolioLayout title="Page not found — Michael Muñoz" description="This page could not be found. Return to Michael Muñoz's selected work or homepage." noindex>
+  <main id="top" tabindex="-1" class="wrap not-found">
+    <span class="pill">404 · Page not found</span>
+    <h1>This path ends here.</h1>
+    <p>The page may have moved, or the address may contain a typo.</p>
+    <div class="hero-cta">
+      <a class="btn btn-solid" href="/#portfolio">Explore selected work</a>
+      <a class="btn" href="/">Back to the homepage</a>
+    </div>
+  </main>
+</PortfolioLayout>
+<style>
+  .not-found{ padding-top:80px; padding-bottom:120px; min-height:65vh; }
+  h1{ font-size:clamp(2.3rem,5vw,4rem); max-width:18ch; }
+  p{ max-width:55ch; }
+</style>

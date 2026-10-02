@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="720" viewBox="0 0 800 720" role="img" aria-labelledby="title desc">
+  <title id="title">One shared core, specialized practice</title>
+  <desc id="desc">Shared skills and expectations connect each team's pathways to practice, resources, and measurement. Design preflight is one example. Team leaders validate the framework and own measures. Business results are not supplied.</desc>
+  <style>text{font-family:'Work Sans',Arial,sans-serif;fill:#342820}.title{font-family:'Bricolage Grotesque',Arial,sans-serif;font-weight:800;font-size:40px}.label{font-size:28px;font-weight:700}.body{font-size:26px}.small{font-size:23px}</style>
+  <rect width="800" height="720" fill="#F4EBDE"/>
+  <text x="36" y="58" class="title">One core. Specialized practice.</text>
+  <rect x="36" y="90" width="692" height="105" rx="8" fill="#2D4946"/>
+  <text x="58" y="130" class="label" style="fill:#F4EBDE">01 / Shared core</text>
+  <text x="58" y="170" class="body" style="fill:#F4EBDE">Skills, behaviors, and expectations</text>
+  <path d="M365 195V222m-9-9 9 9 9-9" fill="none" stroke="#2D4946" stroke-width="3"/>
+  <rect x="36" y="233" width="692" height="105" rx="8" fill="#E8E5D8" stroke="#2D4946" stroke-width="2"/>
+  <text x="58" y="273" class="label">02 / Each team's pathways</text>
+  <text x="58" y="313" class="body">Example: design preflight</text>
+  <path d="M365 338V365m-9-9 9 9 9-9" fill="none" stroke="#2D4946" stroke-width="3"/>
+  <rect x="36" y="376" width="692" height="105" rx="8" fill="#EEE2D2"/>
+  <text x="58" y="416" class="label">03 / Connected support</text>
+  <text x="58" y="456" class="body">Practice, resources, contribution, reuse</text>
+  <path d="M365 481V508m-9-9 9 9 9-9" fill="none" stroke="#2D4946" stroke-width="3"/>
+  <rect x="36" y="519" width="692" height="105" rx="8" fill="#DDD1BD"/>
+  <text x="58" y="559" class="label">04 / Measurement</text>
+  <text x="58" y="599" class="body">Current signals; outcomes still to assess</text>
+  <path d="M728 571H758V142H728m10-8-10 8 10 8" fill="none" stroke="#2D4946" stroke-width="3" stroke-dasharray="7 5"/>
+  <text x="36" y="666" class="small">Team leaders validate and own measures.</text>
+  <text x="36" y="704" class="small">Illustrative reconstruction; not an internal artifact.</text>
+</svg>

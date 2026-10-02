@@ -92,6 +92,18 @@ def figure(file,caption,width=WIDTH):
     image.hAlign='CENTER'
     return [KeepTogether([Spacer(1,5),image,Spacer(1,8),para(caption,'caption')])]
 
+def agenda_summary():
+    # The complete agenda appears on page two. Keep this opening visual short
+    # and text-based so its labels remain readable in print and text extraction.
+    cells=[
+        [para('DAY 01','label'),para('Launch the engagement','subhead')],
+        [para('DAY 02','label'),para('Lead the delivery','subhead')],
+        [para('DAY 03','label'),para('Close and renew','subhead')],
+    ]
+    table=Table([cells],colWidths=[WIDTH/3]*3)
+    table.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,-1),PAPER),('BOX',(0,0),(-1,-1),.7,EDGE),('INNERGRID',(0,0),(-1,-1),.7,EDGE),('VALIGN',(0,0),(-1,-1),'TOP'),('LEFTPADDING',(0,0),(-1,-1),12),('RIGHTPADDING',(0,0),(-1,-1),12),('TOPPADDING',(0,0),(-1,-1),7),('BOTTOMPADDING',(0,0),(-1,-1),7)]))
+    return [table,Spacer(1,8),para('Illustrative three-day sequence. Adapted session titles and pacing appear on the next page.','caption')]
+
 def build(name,title,story):
     target=ROOT/'public/downloads'/name
     def frame(c,doc):
@@ -109,7 +121,7 @@ def build(name,title,story):
 boot=json.loads((ROOT/'src/content/bootcamp-case-study.json').read_text(encoding='utf-8'))
 story=badge('Performance strategy / Program design')+blocks(boot['sections'][0]['blocks'][1:])
 story+=card([para('AUDIENCE','label'),para('Approximately 50 intended participants, from Senior Associates through Directors. This is an audience estimate, not a completion count.','caption')])
-story+=[TornDivider()]+figure('bootcamp/agenda.png','Illustrative agenda with adapted session titles. Exact clock times are not claimed.',width=460)
+story+=[TornDivider()]+agenda_summary()
 story+=[PageBreak()]+badge('01 / Program architecture')+blocks(boot['sections'][1]['blocks'])
 story+=[TornDivider()]+blocks(boot['sections'][2]['blocks'])
 story+=[PageBreak()]+badge('02 / Practice & reflection')+blocks(boot['sections'][3]['blocks'])
@@ -118,10 +130,14 @@ story+=card([para('ABOUT THIS CASE','label'),para(boot['disclosure'],'caption')]
 build('delivery-lead-bootcamp-case-study.pdf','Delivery Lead Bootcamp',story)
 
 architecture=json.loads((ROOT/'src/content/architecture-case-study.json').read_text(encoding='utf-8'))
+# Keep the behavior-first decision with the opening so the evidence page has room
+# for the preflight sequence and measurement ladder without shrinking body type.
 story=badge('Learning strategy / Capability architecture')+[para('Shared Learning Architecture & Strategy','title')]+blocks(architecture['sections'][0]['blocks'][2:])
-story+=[TornDivider()]+figure('architecture/model.png','Illustrative reconstruction of the operating model; not an original internal artifact.',width=330)
-story+=[PageBreak()]+badge('01 / Design decisions & evidence')+blocks(architecture['sections'][1]['blocks'])
-story+=[TornDivider()]+blocks(architecture['sections'][2]['blocks'])
-story+=[TornDivider()]+blocks(architecture['sections'][3]['blocks'])
-story+=card([para('INTERPRETATION & CONFIDENTIALITY','label'),para('The operating architecture is described from the project owner\u2019s account. No proprietary competency definitions or original discovery-call material are reproduced. '+architecture['disclosure'],'caption')])
+story+=blocks(architecture['sections'][1]['blocks'][1:2])
+story+=[TornDivider()]+figure('architecture/model.png','Simplified portfolio reconstruction of the operating model; not an original internal artifact.',width=380)
+styles['body'].spaceAfter=3
+story+=[PageBreak()]+badge('01 / Design decisions & evidence')+blocks([architecture['sections'][1]['blocks'][0]]+architecture['sections'][1]['blocks'][2:])
+story+=blocks(architecture['sections'][2]['blocks'])
+story+=blocks(architecture['sections'][3]['blocks'])
+story+=card([para('INTERPRETATION & CONFIDENTIALITY','label'),para('The operating architecture is described from the project owner\u2019s account. No original prompt, call, or design artifact is reproduced. '+architecture['disclosure'],'caption')])
 build('shared-learning-architecture-case-study.pdf','Shared Learning Architecture & Strategy',story)

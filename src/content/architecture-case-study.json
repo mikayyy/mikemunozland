@@ -36,11 +36,11 @@
         },
         {
           "type": "p",
-          "text": "I separated human capabilities from organizational capabilities and moved the conversation away from a course list. Programs would begin with observable behaviors, then use practice, application, and support to help those behaviors show up in work."
+          "text": "I defined the skills and behaviors people needed to build, then identified how each team would apply them. Observable behaviors guided the architecture, with practice and support connected to work."
         },
         {
           "type": "p",
-          "text": "The central decision was a common core of competencies and expectations. Each specialized capability translates that core through its own pathways. Learning journeys, a resource hub, and ways to contribute and reuse approaches connect the pieces. The system is operating today."
+          "text": "Shared: identity, expectations, behavior standards, and a measurement approach. Specialized: each team's practice, pathways, and leader-owned success measures. Learning journeys, the resource hub, and contribution and reuse connect the operating system."
         }
       ]
     },
@@ -52,11 +52,23 @@
         },
         {
           "type": "p",
-          "text": "AI-native workflows are one common-core expectation. The system also places practice and feedback close to real tasks."
+          "text": "AI-native workflows ask people to create a workspace for each new project and ship more code, designs, or experiences. We provided a prompt library, discovery-meeting coaching, and an AI tool selection guide alongside preflight checks."
         },
         {
-          "type": "p",
-          "text": "We created a coaching prompt to review people's performance during discovery calls for UX design projects. It puts reflection close to the work itself, alongside simulations, demonstrations, and reusable approaches."
+          "type": "li",
+          "text": "Run the check: The designer runs a preflight on the design."
+        },
+        {
+          "type": "li",
+          "text": "Review against standards: The workflow grades the design against standards, concepts, frameworks, and similar criteria."
+        },
+        {
+          "type": "li",
+          "text": "Choose remediation: The designer receives a report and decides how to remediate."
+        },
+        {
+          "type": "li",
+          "text": "Share review evidence: Managers and leaders were asked to request the scorecard when designers deliver work."
         },
         {
           "type": "p",
@@ -72,11 +84,39 @@
         },
         {
           "type": "p",
-          "text": "Capability leaders help validate the framework and own success measures. The current signals tell us about use and contribution. The longer-term test is whether this work improves performance and business outcomes."
+          "text": "Team leaders help validate the framework and own success measures. The current signals tell us about use and contribution. The longer-term test is whether this work improves performance and business outcomes."
         },
         {
-          "type": "p",
-          "text": "AI tool usage, PRs, GitHub pulls, and artifacts in the resource hub."
+          "type": "dt",
+          "text": "Adoption / Current signal"
+        },
+        {
+          "type": "dd",
+          "text": "AI tool usage."
+        },
+        {
+          "type": "dt",
+          "text": "Contribution / Current signals"
+        },
+        {
+          "type": "dd",
+          "text": "Pull requests, code changes proposed for review, and resource-hub artifacts."
+        },
+        {
+          "type": "dt",
+          "text": "Design review / Individual scorecards"
+        },
+        {
+          "type": "dd",
+          "text": "Preflight results go to designers; no improvement trend is reported here."
+        },
+        {
+          "type": "dt",
+          "text": "Business outcomes / Intended"
+        },
+        {
+          "type": "dd",
+          "text": "Results not yet supplied."
         },
         {
           "type": "p",

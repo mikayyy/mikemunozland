@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="680" viewBox="0 0 800 680" role="img" aria-labelledby="title desc">
+  <title id="title">Three days, one engagement arc</title>
+  <desc id="desc">Day one: launch the engagement. Day two: lead the delivery. Day three: close and renew, including a two-hour capstone. Most sessions were 45 to 90 minutes with protected work time after lunch. Session titles are adapted.</desc>
+  <style>text{font-family:'Work Sans',Arial,sans-serif;fill:#342820}.title{font-family:'Bricolage Grotesque',Arial,sans-serif;font-size:40px;font-weight:800}.label{font-size:29px;font-weight:700}.body{font-size:26px}.small{font-size:23px}</style>
+  <rect width="800" height="680" fill="#F4EBDE"/>
+  <text x="36" y="58" class="title">Three days. One engagement arc.</text>
+  <rect x="36" y="88" width="728" height="124" rx="8" fill="#EEE2D2"/>
+  <text x="58" y="130" class="label">DAY 01 / Launch the engagement</text>
+  <text x="58" y="174" class="body">Kickoff, team connections, cultural agility</text>
+  <path d="M400 212V244m-9-9 9 9 9-9" fill="none" stroke="#945038" stroke-width="3"/>
+  <rect x="36" y="254" width="728" height="124" rx="8" fill="#E8E5D8"/>
+  <text x="58" y="296" class="label">DAY 02 / Lead the delivery</text>
+  <text x="58" y="340" class="body">AI practice, economics, service operations</text>
+  <path d="M400 378V410m-9-9 9 9 9-9" fill="none" stroke="#945038" stroke-width="3"/>
+  <rect x="36" y="420" width="728" height="124" rx="8" fill="#DDD1BD"/>
+  <text x="58" y="462" class="label">DAY 03 / Close and renew</text>
+  <text x="58" y="506" class="body">Quality, risk, renewal, two-hour capstone</text>
+  <text x="36" y="590" class="small">45-90-minute sessions / Protected work after lunch</text>
+  <text x="36" y="628" class="small">Capstone: 90 minutes of decisions + 30 to present</text>
+  <text x="36" y="666" class="small">Illustrative agenda; session names adapted.</text>
+</svg>

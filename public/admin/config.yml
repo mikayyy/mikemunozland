@@ -1,8 +1,7 @@
 backend:
   name: github
   repo: mikayyy/mikemunozland
-  # Use the review branch for the publishing trial. Switch to main before release.
-  branch: feature/motes
+  branch: main
   base_url: https://api.netlify.com
   auth_endpoint: auth
   auth_scope: public_repo

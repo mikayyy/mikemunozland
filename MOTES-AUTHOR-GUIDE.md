@@ -1,6 +1,6 @@
 # Publishing Motes
 
-The reading experience and `/admin/` editor are implemented on the Motes branch. GitHub sign-in and the create/save/edit/image-upload/publish workflow were verified on October 13, 2026. No production release or real Mote has been published. During the publishing trial the CMS targets `feature/motes`, so Publish merges only into that review branch. Change the backend branch to `main` before the approved release.
+Motes and its first post were approved for release on October 13, 2026. GitHub sign-in and the create/save/edit/image-upload/publish workflow were verified on the review branch. The editor now targets `main`: Publish merges into that branch and triggers the live website build. Visit https://mikemunozland.com/admin/ to write.
 
 ## Draft visibility
 
@@ -20,11 +20,11 @@ Players load near the viewport and never autoplay. Email replies open a draft in
 
 Keep addresses unchanged after publishing. Future dates hide entries but do not schedule a rebuild. Embeds can become unavailable, so source links remain available. Sample entries are permanently marked sample and cannot appear in production simply by switching off draft.
 
-## Release still required
+## Release verification
 
 - Owner authorization and OAuth connection are complete. The authenticated trial passed, including an uploaded image and deployed LinkedIn short-link resolution. The temporary entry and uploaded file were removed afterward.
-- The trial deployed through PR #5's protected preview. Editorial PR #6 targeted the review branch and did not receive a separate Netlify draft preview; verify the editor's external draft-preview link after switching its backend to `main`. Only protected previews should set `MOTES_PREVIEW=true`; Netlify production excludes drafts/samples regardless of that flag.
-- An approved first real Mote and owner approval before merging the feature branch.
+- The trial deployed through PR #5's protected preview. Editorial PR #6 targeted the review branch and did not receive a separate Netlify draft preview; verify the editor's external draft-preview link after release. Only protected previews should set `MOTES_PREVIEW=true`; Netlify production excludes drafts/samples regardless of that flag.
+- The first real Mote and production release are approved.
 
 When Codex tests file uploads through Chrome, the ChatGPT extension needs Allow access to file URLs enabled. Ordinary manual uploads do not depend on that automation setting.
 

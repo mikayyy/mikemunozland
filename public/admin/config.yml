@@ -27,9 +27,9 @@ collections:
     fields:
       - {
           name: slug,
-          label: Post address,
+          label: URL name,
           widget: string,
-          hint: "Use lowercase words separated by hyphens. Keep this unchanged after publishing.",
+          hint: "The end of your post’s web address: a-song-for-monday becomes /motes/a-song-for-monday/. Use a unique name with lowercase words and hyphens; keep it unchanged after publishing.",
           pattern:
             [
               "^(?!page$|rss$|index$)[a-z0-9]+(?:-[a-z0-9]+)*$",
@@ -49,29 +49,7 @@ collections:
           widget: datetime,
           format: "YYYY-MM-DDTHH:mm:ssZ",
         }
-      - {
-          name: updatedAt,
-          label: Updated date,
-          widget: datetime,
-          required: false,
-          format: "YYYY-MM-DDTHH:mm:ssZ",
-        }
-      - {
-          name: draft,
-          label: Hide from the live website,
-          widget: boolean,
-          default: false,
-          hint: "Drafts stay on separate branches until Publish. Turn this on to withdraw a published Mote from the live site. Future dates do not schedule a build.",
-        }
       - { name: sample, label: Sample only, widget: hidden, default: false }
-      - {
-          name: type,
-          label: Post style,
-          widget: select,
-          options: [note, link],
-          default: note,
-          hint: "Both styles support media. Choose link when sharing an external source.",
-        }
       - {
           name: topics,
           label: Topics,
@@ -81,6 +59,7 @@ collections:
           max: 2,
           options: [Making, Listening, Learning, Life],
           default: [],
+          hint: "Optional: choose up to two labels. Making = projects; Listening = music; Learning = ideas and professional interests; Life = personal stories. Everything stays in one feed.",
         }
       - {
           name: body,
@@ -98,7 +77,7 @@ collections:
               numbered-list,
             ],
           editor_components: [],
-          hint: "A few sentences or a longer story. Add images and players under Media.",
+          hint: "Write a few sentences or a longer story. Add images, YouTube videos, or Spotify players in the next section.",
         }
       - {
           name: summary,
@@ -109,11 +88,19 @@ collections:
           hint: "Optional. Otherwise the homepage excerpt comes from your writing.",
         }
       - {
+          name: type,
+          label: Post style,
+          widget: select,
+          options: [note, link],
+          default: note,
+          hint: "Leave note selected for your own writing, including music posts. Choose link when discussing an external article or post; then fill in its source link and title below.",
+        }
+      - {
           name: sourceUrl,
           label: Source link,
           widget: mote-source,
           required: false,
-          hint: "Paste a LinkedIn post URL or another HTTPS link. LinkedIn short links resolve when you leave the field.",
+          hint: "The article or post you’re discussing. LinkedIn posts embed automatically; other sources appear as a clickable link. For a playable YouTube video or Spotify track/playlist, use Add images or players instead. You do not need the same link in both places.",
         }
       - {
           name: sourceTitle,
@@ -123,24 +110,10 @@ collections:
           default: "",
           hint: "Required when Post style is link.",
         }
-      - {
-          name: linkedinEmbed,
-          label: LinkedIn embed code,
-          widget: text,
-          required: false,
-          default: "",
-          hint: "Optional for recognized post links. For lnkd.in short links, paste Embed this post code here. Only the LinkedIn iframe URL is used.",
-        }
-      - {
-          name: conversationUrl,
-          label: LinkedIn conversation,
-          widget: string,
-          required: false,
-          hint: "Optional separate link for discussion of this Mote.",
-        }
       - name: media
-        label: Media
+        label: Add images or players
         widget: list
+        hint: "Optional: upload an image or short audio/video, or add a normal YouTube or Spotify URL for a playable embed. Tracks and playlists work; YouTube and Spotify do not need embed code."
         required: false
         min: 0
         max: 8
@@ -232,3 +205,7 @@ collections:
                   required: false,
                   default: "",
                 }
+      - { name: updatedAt, label: Updated date, widget: datetime, required: false, format: "YYYY-MM-DDTHH:mm:ssZ", hint: "Optional: record when you revised a published Mote." }
+      - { name: draft, label: Hide from the live website, widget: boolean, default: false, hint: "Leave off for normal publishing. Saving a draft already keeps it unpublished. Turn on to withdraw a published Mote. Future dates do not schedule a build." }
+      - { name: linkedinEmbed, label: LinkedIn embed code (fallback), widget: text, required: false, default: "", hint: "Use only if the Source link does not show the LinkedIn post. Paste its official Embed this post code. YouTube and Spotify do not need this." }
+      - { name: conversationUrl, label: LinkedIn conversation, widget: string, required: false, hint: "Optional: adds a Join the conversation on LinkedIn button pointing to this URL." }

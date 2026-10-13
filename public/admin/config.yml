@@ -1,12 +1,14 @@
 backend:
   name: github
   repo: mikayyy/mikemunozland
-  branch: main
+  # Use the review branch for the publishing trial. Switch to main before release.
+  branch: feature/motes
   base_url: https://api.netlify.com
   auth_endpoint: auth
   auth_scope: public_repo
+  site_domain: mikemunozland.com
   squash_merges: true
-  preview_context: deploy-preview
+  preview_context: netlify/lovely-semolina-caf3a0/deploy-preview
 publish_mode: editorial_workflow
 site_url: https://mikemunozland.com
 display_url: https://mikemunozland.com/motes/

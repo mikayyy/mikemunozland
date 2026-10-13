@@ -1,6 +1,6 @@
 # Publishing Motes
 
-The reading experience and `/admin/` editor are implemented on the Motes branch. GitHub OAuth is not connected. No production release or real Mote has been published.
+The reading experience and `/admin/` editor are implemented on the Motes branch. GitHub OAuth setup is pending credential entry. No production release or real Mote has been published. During the publishing trial the CMS targets `feature/motes`, so Publish merges only into that review branch. Change the backend branch to `main` before the approved release.
 
 ## Draft visibility
 

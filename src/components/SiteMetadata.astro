@@ -4,7 +4,9 @@ const { title, description, noindex = false, article=false,publishedAt,updatedAt
 // Only emit absolute public URLs when a production domain is configured.
 const canonical = Astro.site && !noindex ? new URL(Astro.url.pathname.replace(/\/$/, '') || '/', Astro.site) : undefined;
 const shareImage = Astro.site ? new URL('/social-preview.png', Astro.site) : undefined;
+const analyticsEnabled = (process.env.CONTEXT === 'production' && !noindex) || process.env.ANALYTICS_PREVIEW === 'true';
 ---
+{analyticsEnabled && <><link rel="stylesheet" href="/analytics.css" /><script is:inline defer src="/analytics.js" data-measurement-id="G-GF11NXLK02"></script></>}
 {noindex && <meta name="robots" content="noindex, follow" />}
 <meta name="description" content={description} />
 <meta name="theme-color" content="#F6EEDC" />

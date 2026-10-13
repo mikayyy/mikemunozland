@@ -426,6 +426,11 @@ function junctionTransition() {
 }
 
 function renderPage(name) {
+  // Record reached milestones without recording the learner's decisions.
+  const previousPage = state.page;
+  const milestone = name === 'debrief' && previousPage !== 'debrief' ? 'complete'
+    : previousPage === 'cover' && name !== 'cover' ? 'start' : null;
+  if (milestone) document.dispatchEvent(new CustomEvent('portfolio:experience', { detail: { milestone } }));
   state.page = name;
   if (name === "call") transmissionStep = 0;
   journalPage.dataset.page = name;
@@ -921,6 +926,7 @@ function debriefHtml() {
 }
 
 function restart() {
+  document.dispatchEvent(new CustomEvent('portfolio:experience', { detail: { milestone: 'replay' } }));
   state.decisionOne = null;
   state.signals = [];
   state.decisionThree = null;

@@ -1,0 +1,27 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import { dateLabel, excerpt, postTitle, postUrl, embedFor } from '../lib/motes-core.mjs';
+import MoteMedia from './MoteMedia.astro';
+interface Props { entry:CollectionEntry<'motes'>; detail?:boolean; }
+const { entry, detail=false } = Astro.props;
+const { Content } = await render(entry);
+const title=postTitle(entry);
+const long=!detail && (entry.body || '').split(/\s+/).length>180;
+const linkedin=entry.data.sourceUrl ? embedFor(entry.data.sourceUrl, entry.data.linkedinEmbed) : null;
+const reply='mailto:mikemunoz@gmail.com?'+new URLSearchParams({subject:`Mote: ${title}`,body:`About ${new URL(postUrl(entry),Astro.site).href}\n\n`}).toString();
+---
+<article class:list={['mote',detail && 'detail-mote']}>
+  <div class="post-meta"><time datetime={entry.data.publishedAt.toISOString()}>{dateLabel(entry.data.publishedAt)}</time>{entry.data.topics.map(topic=><span class="topic">{topic}</span>)}</div>
+  {detail ? <h1>{title}</h1> : <h2><a href={postUrl(entry)}>{title}</a></h2>}
+  {entry.data.sample && <p class="sample-caption">Illustrative sample · not a published Mote</p>}
+  <div class="mote-body">{long ? <><p>{excerpt(entry.body,entry.data.summary,420)}</p><a href={postUrl(entry)}>Read the full Mote →</a></> : <Content />}</div>
+  {!long && entry.data.media.map(media=><MoteMedia media={media} />)}
+  {!long && linkedin?.provider==='linkedin' && <MoteMedia media={{type:'embed',url:entry.data.sourceUrl,embedCode:entry.data.linkedinEmbed,caption:entry.data.sourceTitle}} />}
+  {entry.data.sourceUrl && linkedin?.provider!=='linkedin' && <div class="link-panel"><a href={entry.data.sourceUrl} target="_blank" rel="noopener noreferrer">{entry.data.sourceTitle || 'Read the source'} ↗</a></div>}
+  {entry.data.updatedAt && <p class="sample-caption">Updated {dateLabel(entry.data.updatedAt)}</p>}
+  <div class="post-actions">
+    {!detail && <a href={postUrl(entry)}>Permalink ↗</a>}
+    <a href={reply}>Reply by email ↗</a>
+    {entry.data.conversationUrl && <a href={entry.data.conversationUrl} target="_blank" rel="noopener noreferrer">Join the conversation on LinkedIn ↗</a>}
+  </div>
+</article>

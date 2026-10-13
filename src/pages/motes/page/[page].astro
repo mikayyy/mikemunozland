@@ -1,0 +1,11 @@
+---
+import MotesLayout from '../../../layouts/MotesLayout.astro';
+import MoteEntry from '../../../components/MoteEntry.astro';
+import { getMotes } from '../../../lib/motes';
+export async function getStaticPaths(){
+  const entries=await getMotes();
+  return Array.from({length:Math.max(0,Math.ceil(entries.length/10)-1)},(_,i)=>({params:{page:String(i+2)},props:{entries:entries.slice((i+1)*10,(i+2)*10),page:i+2,pages:Math.ceil(entries.length/10)}}));
+}
+const {entries,page,pages}=Astro.props;
+---
+<MotesLayout title={`Motes · Page ${page} — Michael Muñoz`}><div class="detail-wrap"><a class="back-link" href="/motes/">← Latest Motes</a><header class="archive-heading"><h1>More Motes<span class="mote-dot">.</span></h1><p>Page {page} of {pages}</p></header>{entries.map(entry=><MoteEntry entry={entry} />)}<nav class="feed-end" aria-label="Motes pagination"><a href={page===2?'/motes/':`/motes/page/${page-1}/`}>← Newer Motes</a>{page<pages && <a href={`/motes/page/${page+1}/`}>Older Motes →</a>}</nav></div></MotesLayout>

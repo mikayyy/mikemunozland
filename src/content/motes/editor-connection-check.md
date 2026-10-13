@@ -6,7 +6,7 @@ draft: false
 sample: false
 type: note
 topics: []
-summary: ""
+summary: "Temporary test: saved, reopened, and edited successfully."
 sourceUrl: https://www.linkedin.com/posts/michaellxd_you-are-what-you-eat-read-so-this-weekend-ugcPost-7515503463791874048-8od_/
 sourceTitle: LinkedIn embed test
 linkedinEmbed: ""

@@ -1,0 +1,234 @@
+backend:
+  name: github
+  repo: mikayyy/mikemunozland
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+  auth_scope: public_repo
+  site_domain: mikemunozland.com
+  squash_merges: true
+  preview_context: netlify/lovely-semolina-caf3a0/deploy-preview
+publish_mode: editorial_workflow
+site_url: https://mikemunozland.com
+display_url: https://mikemunozland.com/motes/
+media_folder: public/uploads/motes
+public_folder: /uploads/motes
+collections:
+  - name: motes
+    label: Motes
+    label_singular: Mote
+    folder: src/content/motes
+    create: true
+    identifier_field: slug
+    slug: "{{fields.slug}}"
+    preview_path: "motes/{{slug}}/"
+    summary: "{{publishedAt}} · {{title}}"
+    sortable_fields: [publishedAt, title]
+    fields:
+      - {
+          name: slug,
+          label: Post address,
+          widget: string,
+          hint: "Use lowercase words separated by hyphens. Keep this unchanged after publishing.",
+          pattern:
+            [
+              "^(?!page$|rss$|index$)[a-z0-9]+(?:-[a-z0-9]+)*$",
+              "Use a unique address such as a-small-ai-experiment.",
+            ],
+        }
+      - {
+          name: title,
+          label: Heading,
+          widget: string,
+          required: false,
+          default: "",
+        }
+      - {
+          name: publishedAt,
+          label: Publication date,
+          widget: datetime,
+          format: "YYYY-MM-DDTHH:mm:ssZ",
+        }
+      - {
+          name: updatedAt,
+          label: Updated date,
+          widget: datetime,
+          required: false,
+          format: "YYYY-MM-DDTHH:mm:ssZ",
+        }
+      - {
+          name: draft,
+          label: Hide from the live website,
+          widget: boolean,
+          default: false,
+          hint: "Drafts stay on separate branches until Publish. Turn this on to withdraw a published Mote from the live site. Future dates do not schedule a build.",
+        }
+      - { name: sample, label: Sample only, widget: hidden, default: false }
+      - {
+          name: type,
+          label: Post style,
+          widget: select,
+          options: [note, link],
+          default: note,
+          hint: "Both styles support media. Choose link when sharing an external source.",
+        }
+      - {
+          name: topics,
+          label: Topics,
+          widget: select,
+          multiple: true,
+          required: false,
+          max: 2,
+          options: [Making, Listening, Learning, Life],
+          default: [],
+        }
+      - {
+          name: body,
+          label: Your words,
+          widget: markdown,
+          minimal: true,
+          buttons:
+            [
+              bold,
+              italic,
+              link,
+              heading-two,
+              quote,
+              bulleted-list,
+              numbered-list,
+            ],
+          editor_components: [],
+          hint: "A few sentences or a longer story. Add images and players under Media.",
+        }
+      - {
+          name: summary,
+          label: Short excerpt,
+          widget: text,
+          required: false,
+          default: "",
+          hint: "Optional. Otherwise the homepage excerpt comes from your writing.",
+        }
+      - {
+          name: sourceUrl,
+          label: Source link,
+          widget: mote-source,
+          required: false,
+          hint: "Paste a LinkedIn post URL or another HTTPS link. LinkedIn short links resolve when you leave the field.",
+        }
+      - {
+          name: sourceTitle,
+          label: Source title,
+          widget: string,
+          required: false,
+          default: "",
+          hint: "Required when Post style is link.",
+        }
+      - {
+          name: linkedinEmbed,
+          label: LinkedIn embed code,
+          widget: text,
+          required: false,
+          default: "",
+          hint: "Optional for recognized post links. For lnkd.in short links, paste Embed this post code here. Only the LinkedIn iframe URL is used.",
+        }
+      - {
+          name: conversationUrl,
+          label: LinkedIn conversation,
+          widget: string,
+          required: false,
+          hint: "Optional separate link for discussion of this Mote.",
+        }
+      - name: media
+        label: Media
+        widget: list
+        required: false
+        min: 0
+        max: 8
+        default: []
+        types:
+          - name: embed
+            label: YouTube / Spotify / LinkedIn
+            widget: object
+            fields:
+              - { name: url, label: Link, widget: mote-source }
+              - {
+                  name: embedCode,
+                  label: LinkedIn embed code,
+                  widget: text,
+                  required: false,
+                  default: "",
+                }
+              - {
+                  name: caption,
+                  label: Caption,
+                  widget: string,
+                  required: false,
+                  default: "",
+                }
+          - name: image
+            label: Image
+            widget: object
+            fields:
+              - name: file
+                label: Image (5 MB max)
+                widget: image
+                choose_url: false
+                media_library:
+                  { config: { max_file_size: 5000000, multiple: false } }
+              - { name: alt, label: Image description, widget: string }
+              - {
+                  name: caption,
+                  label: Caption,
+                  widget: string,
+                  required: false,
+                  default: "",
+                }
+          - name: video
+            label: Short video
+            widget: object
+            fields:
+              - name: file
+                label: MP4 video (10 MB max)
+                widget: file
+                choose_url: false
+                media_library:
+                  { config: { max_file_size: 10000000, multiple: false } }
+              - { name: label, label: Video title, widget: string }
+              - {
+                  name: transcript,
+                  label: Text alternative,
+                  widget: text,
+                  required: false,
+                  default: "",
+                  hint: "Include a transcript for speech and a description of important visual information.",
+                }
+              - {
+                  name: caption,
+                  label: Caption,
+                  widget: string,
+                  required: false,
+                  default: "",
+                }
+          - name: audio
+            label: Short audio
+            widget: object
+            fields:
+              - name: file
+                label: MP3 / M4A audio (5 MB max)
+                widget: file
+                choose_url: false
+                media_library:
+                  { config: { max_file_size: 5000000, multiple: false } }
+              - { name: label, label: Audio title, widget: string }
+              - {
+                  name: transcript,
+                  label: Transcript / description,
+                  widget: text,
+                }
+              - {
+                  name: caption,
+                  label: Caption,
+                  widget: string,
+                  required: false,
+                  default: "",
+                }

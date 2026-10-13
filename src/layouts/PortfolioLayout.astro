@@ -3,8 +3,9 @@ import SiteMetadata from '../components/SiteMetadata.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import '../styles/portfolio.css';
-interface Props { title?: string; description?: string; home?: boolean; noindex?: boolean; }
-const { title = 'Michael Muñoz — Learning Designer & Strategist', description = 'Michael Muñoz designs learning experiences, programs, and capability systems. Explore interactive work and case studies in learning design and strategy.', home = false, noindex = false } = Astro.props;
+interface Props { title?: string; description?: string; home?: boolean; noindex?: boolean; article?:boolean; publishedAt?:Date; updatedAt?:Date; }
+const { title = 'Michael Muñoz — Learning Designer & Strategist', description = 'Michael Muñoz designs learning experiences, programs, and capability systems. Explore interactive work and case studies in learning design and strategy.', home = false, noindex = false, article=false,publishedAt,updatedAt } = Astro.props;
+const previewBuild=process.env.MOTES_PREVIEW==='true' && process.env.CONTEXT!=='production';
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +13,8 @@ const { title = 'Michael Muñoz — Learning Designer & Strategist', description
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{title}</title>
-    <SiteMetadata title={title} description={description} noindex={noindex} />
+    <SiteMetadata title={title} description={description} noindex={noindex || previewBuild} article={article} publishedAt={publishedAt} updatedAt={updatedAt} />
+    <link rel="alternate" type="application/rss+xml" title="Motes — Michael Muñoz" href="/motes/rss.xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />

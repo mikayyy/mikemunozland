@@ -1,0 +1,29 @@
+---
+import { embedFor, sourceLabel } from '../lib/motes-core.mjs';
+const { media } = Astro.props;
+const embed = media.type === 'embed' ? embedFor(media.url, media.embedCode || '') : null;
+---
+<figure class:list={['mote-media', embed && `provider-${embed.provider}`]}>
+  {embed && <>
+    <div class="media-caption"><span>{embed.provider}</span></div>
+    <div class="embed-slot" style={`--embed-height:${embed.height}px`}>
+      <iframe title={`${media.caption || 'Embedded post or player'} — ${embed.provider}`} data-embed-src={embed.src} width="100%" height={embed.height} loading="lazy" allow="encrypted-media; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <a class="source-link" href={media.url} target="_blank" rel="noopener noreferrer">Open on {sourceLabel(media.url)} ↗</a>
+  </>}
+  {media.type === 'image' && <img src={media.file} alt={media.alt} loading="lazy" decoding="async" />}
+  {media.type === 'video' && <video controls preload="none" aria-label={media.label}><source src={media.file} type="video/mp4" /><a href={media.file}>Download video</a></video>}
+  {media.type === 'audio' && <audio controls preload="none" aria-label={media.label}><source src={media.file} /><a href={media.file}>Download audio</a></audio>}
+  {media.caption && <figcaption>{media.caption}</figcaption>}
+  {media.transcript && <details class="transcript"><summary>Transcript / text alternative</summary><p>{media.transcript}</p></details>}
+</figure>
+<script>
+  const frames = document.querySelectorAll<HTMLIFrameElement>('iframe[data-embed-src]');
+  const load = (frame: HTMLIFrameElement) => { if(frame.dataset.embedSrc) { frame.src=frame.dataset.embedSrc; delete frame.dataset.embedSrc; } };
+  if ('IntersectionObserver' in window) {
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{if(entry.isIntersecting){load(entry.target as HTMLIFrameElement);observer.unobserve(entry.target);}});
+    },{rootMargin:'220px'});
+    frames.forEach(frame=>observer.observe(frame));
+  } else { frames.forEach(load); }
+</script>

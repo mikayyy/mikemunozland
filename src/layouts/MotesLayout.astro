@@ -1,0 +1,10 @@
+---
+import PortfolioLayout from './PortfolioLayout.astro';
+import { motesPreview } from '../lib/motes';
+import '../styles/motes.css';
+const { title='Motes — Michael Muñoz', description='What Michael Muñoz is making, listening to, and thinking about. Work, life, and the occasional rabbit hole.', article=false, publishedAt, updatedAt }=Astro.props;
+---
+<PortfolioLayout title={title} description={description} noindex={motesPreview} article={article} publishedAt={publishedAt} updatedAt={updatedAt}>
+  {motesPreview && <div class="preview-notice">DESIGN / EDITORIAL PREVIEW <span>Drafts and sample posts are visible here only.</span></div>}
+  <main id="top" tabindex="-1"><div class="motes-wrap"><slot /></div></main>
+</PortfolioLayout>

@@ -16,6 +16,10 @@ Use Node.js 22.12 or newer. Install dependencies with `npm ci`, then build with 
 - `public/downloads/`: the approved case-study PDFs served by the website.
 - `src/content/` and `scripts/build-*-pdf.py`: source copy and optional PDF rebuilders.
 - `public/margin-prototype/`: the imported playable experience. Its independent visual identity is intentional.
+- `src/content/motes/`: Markdown Motes, media and source links.
+- `public/admin/`: Decap editor, custom preview and shared URL helpers.
+- `netlify/functions/motes-link.mjs`: resolver for LinkedIn post short links.
+- [MOTES-AUTHOR-GUIDE.md](MOTES-AUTHOR-GUIDE.md): workflow and pending editor connection.
 
 The site builds to `dist/` and does not need a database, UI framework, Python, or font files at runtime. The PDFs and brand assets are checked in. Optional document/asset rebuilders use Pillow, ReportLab, and Windows fonts; `PORTFOLIO_FONT_DIR` can point to equivalent available fonts.
 

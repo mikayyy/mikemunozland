@@ -2,11 +2,13 @@
 interface Props { home?: boolean; }
 const { home = false } = Astro.props;
 const anchor = (id: string) => home ? `#${id}` : `/#${id}`;
+const destination = (id: string) => id==='motes' ? '/motes/' : anchor(id);
 const links = [
   { id: 'about', label: 'About' },
   { id: 'capabilities', label: 'What I Do' },
   { id: 'experience', label: 'Experience' },
   { id: 'portfolio', label: 'Selected Work' },
+  { id: 'motes', label: 'Motes' },
   { id: 'community', label: 'Beyond Work' },
 ];
 ---
@@ -14,14 +16,14 @@ const links = [
   <div class="nav-inner">
     <a class="home-link" href={anchor('top')} aria-label="Michael Muñoz — home"><span class="mark" aria-hidden="true">MM</span></a>
     <nav class="desktop-nav" aria-label="Main navigation">
-      <ul class="nav-links">{links.map(link => <li><a href={anchor(link.id)}>{link.label}</a></li>)}</ul>
+      <ul class="nav-links">{links.map(link => <li><a href={destination(link.id)}>{link.label}</a></li>)}</ul>
     </nav>
     <div class="nav-cta">
       <a class="btn btn-solid" href="mailto:mikemunoz@gmail.com"><span class="contact-long">Get in touch</span><span class="contact-short">Email</span></a>
       <details class="mobile-menu">
         <summary class="btn">Menu</summary>
         <nav class="mobile-nav" aria-label="Mobile navigation">
-          <ul>{links.map(link => <li><a href={anchor(link.id)}>{link.label}</a></li>)}</ul>
+          <ul>{links.map(link => <li><a href={destination(link.id)}>{link.label}</a></li>)}</ul>
         </nav>
       </details>
     </div>

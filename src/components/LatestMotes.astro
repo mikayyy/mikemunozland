@@ -1,0 +1,9 @@
+---
+import { getMotes } from '../lib/motes';
+import { dateLabel, excerpt, postTitle, postUrl } from '../lib/motes-core.mjs';
+const latest=(await getMotes()).slice(0,3);
+---
+{latest.length>0 && <section id="motes" class="latest-motes"><div class="wrap latest-grid">
+  <div class="latest-intro"><span class="eyebrow">A little more from me</span><h2>Latest <span class="motes-word">Motes<span class="mote-dot">.</span></span></h2><p>Things I’m making, listening to, and thinking about.</p><a class="all-motes" href="/motes/">All Motes <span aria-hidden="true">→</span></a></div>
+  <div>{latest.map(entry=><article class="home-mote"><div class="home-meta"><time datetime={entry.data.publishedAt.toISOString()}>{dateLabel(entry.data.publishedAt)}</time><span>{entry.data.topics[0]}</span></div><div><h3><a href={postUrl(entry)}>{postTitle(entry)} <span aria-hidden="true">↗</span></a></h3><p>{excerpt(entry.body,entry.data.summary,160)}</p></div></article>)}</div>
+</div></section>}

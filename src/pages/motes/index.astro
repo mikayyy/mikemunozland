@@ -1,0 +1,12 @@
+---
+import MotesLayout from '../../layouts/MotesLayout.astro';
+import MoteEntry from '../../components/MoteEntry.astro';
+import { getMotes } from '../../lib/motes';
+const entries=await getMotes();
+---
+<MotesLayout>
+  <header class="motes-heading"><span class="eyebrow">From Michael Muñoz</span><h1>Motes<span class="mote-dot">.</span></h1><p>What I’m making, listening to, and thinking about.<br class="desktop-break" /> Work, life, and the occasional rabbit hole.</p><div class="feed-intro"><span>Small posts. Room for more.</span><div><a href="/motes/rss.xml">RSS</a> · <a href="https://www.linkedin.com/in/michaellxd/" target="_blank" rel="noopener">Find me on LinkedIn ↗</a></div></div></header>
+  {entries.slice(0,10).map(entry=><MoteEntry entry={entry} />)}
+  {entries.length===0 && <p class="empty-motes">A space for things worth sharing. The first Motes are on their way.</p>}
+  <nav class="feed-end" aria-label="Motes pagination">{entries.length>10 ? <a href="/motes/page/2/">Older Motes →</a> : <span>{entries.length>0?'You’re all caught up.':''}</span>}<a href="/#portfolio">Back to the portfolio →</a></nav>
+</MotesLayout>

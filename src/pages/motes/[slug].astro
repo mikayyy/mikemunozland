@@ -1,0 +1,11 @@
+---
+import MotesLayout from '../../layouts/MotesLayout.astro';
+import MoteEntry from '../../components/MoteEntry.astro';
+import { getMotes } from '../../lib/motes';
+import { postTitle, excerpt } from '../../lib/motes-core.mjs';
+export async function getStaticPaths(){return (await getMotes()).map(entry=>({params:{slug:entry.id},props:{entry}}));}
+const {entry}=Astro.props;
+---
+<MotesLayout title={`${postTitle(entry)} — Motes — Michael Muñoz`} description={excerpt(entry.body,entry.data.summary,155)} article publishedAt={entry.data.publishedAt} updatedAt={entry.data.updatedAt}>
+  <div class="detail-wrap"><a class="back-link" href="/motes/">← All Motes</a><MoteEntry entry={entry} detail /><div class="feed-end"><a href="/motes/">Keep reading Motes →</a><a href="/#portfolio">Back to the portfolio</a></div></div>
+</MotesLayout>

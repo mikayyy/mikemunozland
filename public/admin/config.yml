@@ -111,7 +111,7 @@ collections:
           hint: "Required when Post style is link.",
         }
       - name: media
-        label: Add images or players
+        label: Attachments
         widget: list
         hint: "Optional: upload an image or short audio/video, or add a normal YouTube or Spotify URL for a playable embed. Tracks and playlists work; YouTube and Spotify do not need embed code."
         required: false

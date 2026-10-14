@@ -2,3 +2,4 @@
 # for editorial review; production filtering overrides this flag independently.
 [context.deploy-preview.environment]
   MOTES_PREVIEW = "true"
+  ANALYTICS_PREVIEW = "true"

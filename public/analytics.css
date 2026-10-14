@@ -1,0 +1,8 @@
+.analytics-notice { position: fixed; bottom: 16px; left: 16px; right: 16px; max-width: 680px; margin: auto; z-index: 100; padding: 20px; border: 1px solid #6b5846; border-radius: 8px; background: #f6eedc; color: #2d2118; box-shadow: 0 6px 24px #0003; font: 14px/1.5 'Work Sans', sans-serif; }
+.analytics-notice[hidden] { display: none; }
+.analytics-notice p { margin: 0 0 12px; }
+.analytics-notice div { display: flex; gap: 12px; flex-wrap: wrap; }
+.analytics-notice button { padding: 9px 14px; border: 1px solid #6b5846; border-radius: 4px; background: #f6eedc; color: #2d2118; cursor: pointer; font: inherit; }
+.analytics-notice button:first-child { background: #2d2118; color: #f6eedc; }
+.analytics-preferences { display: block; margin: 12px; padding: 4px; border: 0; background: transparent; color: inherit; text-decoration: underline; cursor: pointer; font: inherit; }
+.analytics-notice button:focus-visible, .analytics-preferences:focus-visible { outline: 3px solid #a74725; outline-offset: 3px; }

@@ -5,6 +5,8 @@ import marginCover from '../assets/margin/cover.png';
 import bootcampImage from '../assets/bootcamp/overview.png';
 import architectureImage from '../assets/architecture/model.png';
 import LatestMotes from '../components/LatestMotes.astro';
+import { Image } from 'astro:assets';
+import headshot from '../assets/profile/michael-munoz-headshot.jpg';
 import '../styles/motes.css';
 ---
 <PortfolioLayout home>
@@ -22,7 +24,10 @@ import '../styles/motes.css';
           <a class="btn" href="#contact">Let's talk</a>
         </div>
       </div>
-      <div class="stat-stack">
+      <figure class="hero-portrait">
+        <Image src={headshot} alt="Michael Muñoz" width={680} widths={[320, 480, 680]} sizes="(max-width: 900px) 280px, 340px" format="webp" quality={82} loading="eager" fetchpriority="high" />
+      </figure>
+      <div class="stat-stack" aria-label="Selected professional results">
         <div class="stat-card sc-1"><div class="num">15,000+</div><div class="label">employees reached through a single quality-training redesign</div></div>
         <div class="stat-card sc-2"><div class="num">70+</div><div class="label">staff directed across eight leadership learning experiences</div></div>
         <div class="stat-card sc-3"><div class="num">92 NPS</div><div class="label">learner satisfaction on a two-week AI-accelerated build</div></div>

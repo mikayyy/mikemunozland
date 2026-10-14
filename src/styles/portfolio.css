@@ -102,7 +102,7 @@
   }
 
   /* ---------- HERO ---------- */
-  .hero{ padding:90px 0 130px; overflow:visible; }
+  .hero{ padding:72px 0 88px; overflow:visible; }
   .hero-shape{
     position:absolute; z-index:0;
     background:var(--mustard);
@@ -113,7 +113,7 @@
   }
   @media (max-width:760px){ .hero-shape{ left:6%; top:70px; height:520px; } }
 
-  .hero-inner{ position:relative; z-index:1; display:grid; grid-template-columns: 1.15fr 0.85fr; gap:40px; align-items:start; }
+  .hero-inner{ position:relative; z-index:1; display:grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.85fr); gap:40px; align-items:center; }
   @media (max-width:900px){ .hero-inner{ grid-template-columns:1fr; } }
 
   .badge{
@@ -133,23 +133,28 @@
   }
   .hero-cta{ margin-top:30px; display:flex; gap:14px; flex-wrap:wrap; }
 
-  .stat-stack{ position:relative; min-height:360px; }
+  .hero-portrait{ margin:0; width:100%; max-width:340px; justify-self:end; aspect-ratio:4 / 5; overflow:hidden; border:8px solid var(--cream); border-radius:14px; box-shadow:5px 7px 0 rgba(43,29,20,.16); transform:rotate(1deg); }
+  .hero-portrait img{ display:block; width:100%; height:100%; object-fit:cover; object-position:center top; }
+  .stat-stack{ grid-column:1 / -1; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin-top:14px; }
   .stat-card{
-    position:absolute; background:var(--cream); border:2px solid var(--ink);
-    border-radius:16px; padding:18px 20px; width:210px;
-    box-shadow:6px 6px 0 var(--ink);
+    background:var(--cream); border:2px solid var(--ink);
+    border-radius:16px; padding:18px 20px;
+    box-shadow:4px 4px 0 var(--ink);
   }
   .stat-card .num{ font-family:var(--font-display); font-weight:800; font-size:2rem; }
   .stat-card .label{ font-size:13.5px; color:var(--ink-soft); margin-top:2px; }
-  .sc-1{ top:0; right:20px; transform:rotate(4deg); background:var(--coral); }
+  .sc-1{ transform:rotate(-1deg); background:var(--coral); }
   .sc-1 .label{ color:var(--ink); }
-  .sc-2{ top:150px; right:70px; transform:rotate(-5deg); }
-  .sc-3{ top:270px; right:-10px; transform:rotate(7deg); background:var(--moss); color:var(--cream); box-shadow:6px 6px 0 var(--ink); }
+  .sc-2{ transform:rotate(1deg); }
+  .sc-3{ transform:rotate(-1deg); background:var(--moss); color:var(--cream); }
   .sc-3 .label{ color:var(--cream); }
   @media (max-width:900px){
-    .stat-stack{ display:flex; flex-wrap:wrap; gap:16px; position:static; min-height:0; padding-top:10px; }
-    .stat-card{ position:static !important; transform:none !important; width:auto; flex:1 1 150px; }
+    .hero{ padding:56px 0 72px; }
+    .hero-portrait{ max-width:280px; justify-self:center; transform:none; }
+    .stat-stack{ gap:16px; margin-top:0; }
+    .stat-card{ transform:none; }
   }
+  @media (max-width:560px){ .stat-stack{ grid-template-columns:1fr; } }
 
   /* torn divider */
   .torn{
